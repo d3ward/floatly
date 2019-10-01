@@ -13,6 +13,7 @@ RAW [Userscript]
   - Copy url of current tab (only on GM extensions)
   - Enable/Disable fullscreen mode
   - Share URL (not working)
+
 The list above will be updated
 
 If you have a suggestion feel free to share it by opening an issue
