@@ -6,11 +6,11 @@ Use with extensions such as [Violentmonkey]/[Tampermonkey], or natively in the b
 
 RAW [Userscript]
 # Actions
-  - Close Tab (require special permission)
+  - Close Tab (requires [Violentmonkey] or [Tampermonkey])
   - Duplicate Tab
   - Go on top
   - Go on bottom
-  - Copy url of current tab (only on GM extensions)
+  - Copy url of current tab (requires [Violentmonkey] or [Tampermonkey])
   - Enable/Disable fullscreen mode
   - Share URL (not working)
 
