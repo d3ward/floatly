@@ -5,9 +5,9 @@
 Floatly is an awesome floating button that brings quick actions from any website .
 Made to be mobile friendly first, but it also works on desktop.
 
-On mobile you can use Floatly on browsers that supports extensions like [Kiwi Browser]
+On mobile you can use Floatly on browsers that supports extensions like [Kiwi Browser](https://kiwibrowser.com/)
 
-Download latest version -> [Releases]
+Download latest version -> [Releases](https://github.com/d3ward/floatly/releases)
 # Actions
   - Close current tab
   - Duplicate current tab
@@ -26,5 +26,3 @@ Download latest version -> [Releases]
 The list above will be updated
 
 If you have a suggestion feel free to share it by opening an issue
-[Kiwi Browser]: <https://kiwibrowser.com/>
-[Releases]:<https://github.com/d3ward/floatly/releases>
