@@ -7,6 +7,7 @@ Made to be mobile friendly first, but it also works on desktop.
 
 On mobile you can use Floatly on browsers that supports extensions like [Kiwi Browser]
 
+RAW [Userscript]
 # Actions
   - Close current tab
   - Duplicate current tab
