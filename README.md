@@ -7,6 +7,7 @@ Made to be mobile friendly first, but it also works on desktop.
 
 On mobile you can use Floatly on browsers that supports extensions like [Kiwi Browser]
 
+Download latest version -> [Releases]
 # Actions
   - Close current tab
   - Duplicate current tab
@@ -26,3 +27,4 @@ The list above will be updated
 
 If you have a suggestion feel free to share it by opening an issue
 [Kiwi Browser]: <https://kiwibrowser.com/>
+[Releases]:<https://github.com/d3ward/floatly/releases>
