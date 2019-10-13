@@ -43,6 +43,7 @@ Download latest version -> [Releases](https://github.com/d3ward/floatly/releases
 - [ ] Translate selected text / page
 - [ ] Media sniffer ( media-internals )
 - [ ] Keep size of floatly when zooming
+- [ ] Add shorcuts to home (Android launcher)
 
 The list above will be updated
 
