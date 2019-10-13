@@ -1,6 +1,6 @@
 # Floatly
 
-![Floatly Logo](https://d3ward.github.com/floatly/icons/icon152.png)
+![Floatly Logo](https://github.com/d3ward/floatly/blob/master/icons/icon152.png)
 
 Floatly is an awesome floating button that brings quick actions from any website .
 Made to be mobile friendly first, but it also works on desktop.
