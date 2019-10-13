@@ -21,7 +21,7 @@ On mobile you can use Floatly on browsers that supports extensions like [Kiwi Br
   - Open History
   - View source code of page
   - Reload page
-  - Media internals
+
 The list above will be updated
 
 If you have a suggestion feel free to share it by opening an issue
