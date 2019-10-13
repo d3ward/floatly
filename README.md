@@ -44,6 +44,7 @@ Download latest version -> [Releases](https://github.com/d3ward/floatly/releases
 - [ ] Media sniffer ( media-internals )
 - [ ] Keep size of floatly when zooming
 - [ ] Add shorcuts to home (Android launcher)
+- [ ] Multiple layouts of Floatly ( semi-circular, double row , vertical )
 
 The list above will be updated
 
