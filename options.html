@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="icons/icon256.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <title>Floatly - Settings</title>
+    <style>
+        
+        :root {
+            --cl0: #0878A5;
+            --cl1: #ffffff;
+            --cl2: #0878A5;
+            --cl3: #ffffff;
+            --cl4: #101010;
+        }
+        html {
+            background: #eee;
+            color: #333;
+            text-align: center;
+        }
+        input[type="color"] {
+            vertical-align: middle;
+            margin-left: 10px;
+            width: 35px;
+            height: 35px;
+            border-radius: 30px;
+        }
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+            border-radius: 30px;
+        }
+        input[type="color"]::-webkit-color-swatch {
+            border-radius: 30px;
+        }
+        button,
+        select,
+        input[type="text"] {
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            background: #fff;
+            border: 0;
+            border-radius: 5px;
+            width: 80px;
+            height: 35px;
+        }
+        select {
+            width: 160px !important;
+        }
+        input[type="text"] {
+            padding-left: 5px;
+        }
+        #av div[data-id="6"],#av div[data-id="11"],#av div[data-id="12"]{display: none;}
+        .cnt {
+            max-width: 600px;
+            margin: auto;
+        }
+        .cnt2 {
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            width: 98%;
+            margin: auto;
+            border-radius: 8px;
+            border: 2px solid #0878A5;
+            height: 80px;
+            overflow: auto;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+        .cnt1 {
+            margin: 10px;
+            margin-bottom: 15px;
+            text-align: end;
+        }
+        #i-tb{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .cnt2 div{
+            display: inline-table;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            margin-left: 4px;
+            margin-top: 2px;
+            font-size: 1.4rem;
+            text-align: center;
+            background-color: var(--cl2);
+            color: var(--cl3);
+            border-radius: 50%;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        .fly_btn {
+            background: var(--cl0);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        #pth1{fill:var(--cl1);}
+        hr {border: 2px solid #0878A5;}
+        .sw-wrapper {position: relative;}
+        .sw {
+            height: 200px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            border-radius: 8px;
+            border: 2px #0878a5 solid;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .sw table {margin-bottom: 0;}
+        .user-list {width: 100%;}
+        #d-tb{
+            margin-top: 10px;
+            color: #0878A5;
+            text-decoration: overline;
+            font-weight: 700;
+            text-decoration-style: dashed;
+        }
+        .tright{text-align: right;}
+    </style>
+</head>
+
+<body>
+    <div class="cnt">
+        <h3>Actions available</h3>
+        <div class="cnt2" id="av"></div>
+        Drag actions from above to below 
+        <h3>Your actions in Floatly</h3>
+        <div class="cnt2" id="uv"></div>
+        <div class="cnt1">
+            Floatly position:
+            <select id="fpos" >
+                <option value="0">Left_Bottom (default)</option>
+                <option value="1">Right_Bottom</option>
+            </select>
+        </div>
+        <div class="cnt1">Long Press Action : <select id="sa-0"></select></div>
+        <div class="cnt1">Swipe Up Action : <select id="sa-1"></select></div>
+        <div class="cnt1">Swipe Right/Left Action : <select id="sa-2"></select></div>
+    
+        <div class="a_i fly_btn"><svg id="svg1" width="23px" height="50px" viewBox="0 0 144 219"> <path id="pth1"  d="M 45.00,106.00 C 38.94,106.68 33.40,110.01 34.27,117.00 35.33,125.50 43.67,123.32 42.99,134.04 42.99,134.04 35.58,182.00 35.58,182.00 34.38,187.43 30.22,200.37 31.65,204.99 33.82,211.99 43.24,214.36 48.67,209.57 54.41,204.52 56.70,193.27 57.92,186.00 57.92,186.00 61.13,162.00 61.13,162.00 61.13,162.00 65.00,127.00 65.00,127.00 69.30,127.00 82.79,127.68 85.95,125.98 92.64,122.36 92.29,110.28 86.79,107.02 83.99,105.36 70.95,106.00 67.00,106.00 67.00,106.00 67.00,57.00 67.00,57.00 67.06,52.52 67.30,46.97 71.22,44.05 85.15,33.70 92.85,54.30 101.00,58.91 106.89,62.25 114.88,60.55 115.87,53.00 117.24,42.48 111.19,34.02 103.00,28.17 88.46,17.78 67.69,16.15 54.18,29.30 44.57,38.66 46.02,49.90 46.00,62.00 46.00,62.00 45.00,79.00 45.00,79.00 45.00,79.00 45.00,106.00 45.00,106.00 Z"/></svg></div>
+        <hr>
+        <h3>Colors</h3>
+        <div class="cnt1">Floatly Color :      <input type="text" id="cl0"><input type="color" id="ct0"></div>
+        <div class="cnt1">Floatly Icon Color : <input type="text" id="cl1"><input type="color" id="ct1"></div>
+        <div class="cnt1">Actions Color :      <input type="text" id="cl2"><input type="color" id="ct2"></div>
+        <div class="cnt1">Actions Icon Color : <input type="text" id="cl3"><input type="color" id="ct3"></div>
+        <div class="cnt1">Actions Area Color : <input type="text" id="cl4"><input type="color" id="ct4"></div>
+        <hr>
+        <div class="sw-wrapper">
+            <h3>Flotly will not be added in the below domains</h3>
+            <h4>You can use keywords or hosts . For example "github" will block all website that contains "github" meanwhile "github.com" will block the host  </h4>
+            <div class="cnt1"><input type="text" id="i-tb"><button id="b-tb">Add</button></form><div id="d-tb">Delete checked domains</div></div>
+            <div class="sw"><table style="width:100%;" id="tbtb"></table></div>
+        </div>
+        <hr>
+        <div class="cnt1">
+            <h4 style="color: #E84F3E;" id="status"></h4>
+            <button id="save">Save</button>
+        </div>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>
