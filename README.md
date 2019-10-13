@@ -23,6 +23,27 @@ Download latest version -> [Releases](https://github.com/d3ward/floatly/releases
   - View source code of page
   - Reload page
 
+# To Do List
+
+- [ ] Homepage chrome://newtab
+- [ ] Open Settings chrome://settings
+- [ ] Close Browser chrome://quit
+- [ ] Restart Browser chrome://restart
+- [ ] Browser Crash chrome://crash/
+- [ ] Include eruda
+- [ ] Open current page in incognito
+- [ ] Delete cookie and data on exit
+- [ ] Open new incognito tab
+- [ ] Share current page
+- [ ] Add current website to bookmarks
+- [ ] Open current page using external apps
+- [ ] Auto scroll for reading
+- [ ] Screenshots of webpage
+- [ ] Reading mode
+- [ ] Translate selected text / page
+- [ ] Media sniffer ( media-internals )
+- [ ] Keep size of floatly when zooming
+
 The list above will be updated
 
 If you have a suggestion feel free to share it by opening an issue
