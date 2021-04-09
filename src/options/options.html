@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="../png/icon256.png">
+    <meta name="theme-color" content="#1d1d1d">
+    <title>Floatly - Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <div id="lrt" class="lrt">
+        <div class="lrt_cnt">
+            <div class="lrt_body" id="lrt_body">
+            </div>
+            <div class="lrt_ft"><button id="ok"> Ok </button></div>
+        </div>
+    </div>
+    <div id="cl_vn" class="lrt">
+        <div class="lrt_cnt">
+            <div class="lrt_body" id="cp_v">
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <header class="fixed">
+        <nav>
+            <div>
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 219">
+                        <path stroke="currentColor"
+                            d="M45 106c-6.06.68-11.6 4.01-10.73 11 1.06 8.5 9.4 6.32 8.72 17.04L35.58 182c-1.2 5.43-5.36 18.37-3.93 22.99 2.17 7 11.59 9.37 17.02 4.58 5.74-5.05 8.03-16.3 9.25-23.57l3.21-24L65 127c4.3 0 17.79.68 20.95-1.02 6.69-3.62 6.34-15.7.84-18.96C83.99 105.36 70.95 106 67 106V57c.06-4.48.3-10.03 4.22-12.95C85.15 33.7 92.85 54.3 101 58.91c5.89 3.34 13.88 1.64 14.87-5.91 1.37-10.52-4.68-18.98-12.87-24.83-14.54-10.39-35.31-12.02-48.82 1.13C44.57 38.66 46.02 49.9 46 62l-1 17v27z" />
+                    </svg>
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a class="bmc" target="_blank" href="https://www.buymeacoffee.com/dOWS9cU">
+                        <svg role="img" id="bmac-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <title>Buy Me A Coffee icon</title>
+                            <path
+                                d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 00-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 01-1.157-.107c-.086-.01-.18-.025-.258-.036-.243-.036-.484-.08-.724-.13-.111-.027-.111-.185 0-.212h.005c.277-.06.557-.108.838-.147h.002c.131-.009.263-.032.394-.048a25.076 25.076 0 013.426-.12c.674.019 1.347.067 2.017.144l.228.031c.267.04.533.088.798.145.392.085.895.113 1.07.542.055.137.08.288.111.431l.319 1.484a.237.237 0 01-.199.284h-.003c-.037.006-.075.01-.112.015a36.704 36.704 0 01-4.743.295 37.059 37.059 0 01-4.699-.304c-.14-.017-.293-.042-.417-.06-.326-.048-.649-.108-.973-.161-.393-.065-.768-.032-1.123.161-.29.16-.527.404-.675.701-.154.316-.199.66-.267 1-.069.34-.176.707-.135 1.056.087.753.613 1.365 1.37 1.502a39.69 39.69 0 0011.343.376.483.483 0 01.535.53l-.071.697-1.018 9.907c-.041.41-.047.832-.125 1.237-.122.637-.553 1.028-1.182 1.171-.577.131-1.165.2-1.756.205-.656.004-1.31-.025-1.966-.022-.699.004-1.556-.06-2.095-.58-.475-.458-.54-1.174-.605-1.793l-.731-7.013-.322-3.094c-.037-.351-.286-.695-.678-.678-.336.015-.718.3-.678.679l.228 2.185.949 9.112c.147 1.344 1.174 2.068 2.446 2.272.742.12 1.503.144 2.257.156.966.016 1.942.053 2.892-.122 1.408-.258 2.465-1.198 2.616-2.657.34-3.332.683-6.663 1.024-9.995l.215-2.087a.484.484 0 01.39-.426c.402-.078.787-.212 1.074-.518.455-.488.546-1.124.385-1.766zm-1.478.772c-.145.137-.363.201-.578.233-2.416.359-4.866.54-7.308.46-1.748-.06-3.477-.254-5.207-.498-.17-.024-.353-.055-.47-.18-.22-.236-.111-.71-.054-.995.052-.26.152-.609.463-.646.484-.057 1.046.148 1.526.22.577.088 1.156.159 1.737.212 2.48.226 5.002.19 7.472-.14.45-.06.899-.13 1.345-.21.399-.072.84-.206 1.08.206.166.281.188.657.162.974a.544.544 0 01-.169.364zm-6.159 3.9c-.862.37-1.84.788-3.109.788a5.884 5.884 0 01-1.569-.217l.877 9.004c.065.78.717 1.38 1.5 1.38 0 0 1.243.065 1.658.065.447 0 1.786-.065 1.786-.065.783 0 1.434-.6 1.499-1.38l.94-9.95a3.996 3.996 0 00-1.322-.238c-.826 0-1.491.284-2.26.613z" />
+                        </svg></a>
+                </li>
+                <li>
+                    <a href="https://github.com/d3ward/floatly">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <title>GitHub icon</title>
+                            <path
+                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <div id="theme-toggle">
+                        <span class="light-icon theme-icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                        </span>
+                        <span class="dark-icon theme-icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <a id="save" class="_bg-primary _cl2">
+                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z">
+                            </path>
+                        </svg>
+                        &nbsp; Save
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <h2>Actions available</h2>
+        <div class="cnt2" id="av"></div>
+
+        <div id="sv">Click on icon for info here </div>
+        Drag actions from above to below
+        <h2>Your actions in Floatly</h2>
+
+        <div id="uv"></div><br>
+
+        <label for="fpos">Floatly position:</label>
+
+        <select id="fpos">
+            <option value="0">Left_Bottom (default)</option>
+            <option value="1">Right_Bottom</option>
+        </select>
+        <label for="sa-0">Long Press Action : </label>
+        <select id="sa-0"></select></div>
+        <label for="sa-1">Swipe Up Action : </label>
+        <select id="sa-1"></select>
+        <label for="sa-2">Swipe Right/Left Action :</label>
+        <select id="sa-2"></select>
+        <hr>
+        <div class="a_i fly_btn"><svg id="svg1" width="23px" height="50px" viewBox="0 0 144 219">
+                <path id="pth1"
+                    d="M 45.00,106.00 C 38.94,106.68 33.40,110.01 34.27,117.00 35.33,125.50 43.67,123.32 42.99,134.04 42.99,134.04 35.58,182.00 35.58,182.00 34.38,187.43 30.22,200.37 31.65,204.99 33.82,211.99 43.24,214.36 48.67,209.57 54.41,204.52 56.70,193.27 57.92,186.00 57.92,186.00 61.13,162.00 61.13,162.00 61.13,162.00 65.00,127.00 65.00,127.00 69.30,127.00 82.79,127.68 85.95,125.98 92.64,122.36 92.29,110.28 86.79,107.02 83.99,105.36 70.95,106.00 67.00,106.00 67.00,106.00 67.00,57.00 67.00,57.00 67.06,52.52 67.30,46.97 71.22,44.05 85.15,33.70 92.85,54.30 101.00,58.91 106.89,62.25 114.88,60.55 115.87,53.00 117.24,42.48 111.19,34.02 103.00,28.17 88.46,17.78 67.69,16.15 54.18,29.30 44.57,38.66 46.02,49.90 46.00,62.00 46.00,62.00 45.00,79.00 45.00,79.00 45.00,79.00 45.00,106.00 45.00,106.00 Z" />
+            </svg></div>
+
+        <h2>Colors</h2>
+        <div class="grid">
+            <div>
+                <label class="stt_cllb" for="stt_cl0">Floatly Color :</label>
+                <div class="stt_clfrt" id="stt_cl0"></div>
+            </div>
+            <div>
+                <label class="stt_cllb" for="stt_cl1">Floatly Icon Color :</label>
+                <div class="stt_clfrt" id="stt_cl1"></div>
+            </div>
+            <div>
+                <label class="stt_cllb" for="stt_cl2">Actions Color :</label>
+                <div class="stt_clfrt" id="stt_cl2"></div>
+            </div>
+            <div>
+                <label class="stt_cllb" for="stt_cl3">Actions Icon Color :</label>
+                <div class="stt_clfrt" id="stt_cl3"></div>
+            </div>
+            <div>
+                <label class="stt_cllb" for="stt_cl4">Actions Area Color :</label>
+                <div class="stt_clfrt" id="stt_cl4"></div>
+            </div>
+        </div>
+        <hr>
+        <h2>Blacklist</h2>
+        <h3><i>Floatly will not be added in the below domains</i></h3>
+        <h4>You can use keywords or hosts . For example "github" will block all website that contains "github"
+            meanwhile "github.com" will block the host </h4>
+        <div class="row">
+            <div><input type="text" id="i-tb"></div>
+            <div><button id="b-tb">Add</button></div>
+        </div>
+
+
+        <div class="sw">
+            <table style="width:100%;" id="tbtb"></table>
+        </div>
+        <button id="d-tb" class="_bg-red"><svg fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg> &nbsp; Delete checked domains</button>
+
+    </main>
+    <footer>
+        <div class="grid">
+            <div>Floatly v1.0.3 </div>
+            <div>Licensed under <b><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA
+                        4.0)</a></b></div>
+            <div><a href="https://heroicons.dev/">Heroicons</a> licensed under <b><a
+                        href="https://github.com/tailwindlabs/heroicons/blob/master/LICENSE">MTI</a></b></div>
+            <div> Made with
+                <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg> by d3ward </div>
+        </div>
+    </footer>
+    <script src="options.js"></script>
+</body>
+
+</html>

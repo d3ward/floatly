@@ -1,6 +1,8 @@
 # Floatly
-
-![Floatly Logo](https://github.com/d3ward/floatly/blob/master/icons/icon152.png)
+<p align="center">
+ <img src="icons/icon152.png" alt="MTI"
+	title="b2ntp" width="160" height="160" />
+</p>
 
 Floatly is an awesome floating button that brings quick actions from any website.
 Made to be mobile friendly first, but it also works on desktop.
@@ -8,7 +10,7 @@ Made to be mobile friendly first, but it also works on desktop.
 On mobile you can use Floatly on browsers that supports extensions like [Kiwi Browser](https://kiwibrowser.com/)
 
 Download latest version -> [Releases](https://github.com/d3ward/floatly/releases)
-# Actions
+## Actions
 
   - Close current tab
   - Duplicate current tab
@@ -30,13 +32,17 @@ Download latest version -> [Releases](https://github.com/d3ward/floatly/releases
   - Bookmarks current tab 
   - Share current page
   
-# Contributing
+## Contributing
 
 If you have a suggestion feel free to share it by opening an issue
 You can suggest an action to be added to Floatly , if it's doable , it will be implemented 
 
-### Libraries & other projects included in Floatly
+## Libraries & other projects included in Floatly
 
  - [Sortable 1.10.0-rc3](https://sortablejs.github.io/Sortable/) - JavaScript library for reorderable drag-and-drop lists  | [MIT License](https://github.com/SortableJS/Sortable/blob/master/LICENSE)  
  - [Vanilla-Picker v2.10.1](https://vanilla-picker.js.org) - A simple, easy to use vanilla JS color picker with alpha selection. | [ISC License](https://github.com/Sphinxxxx/vanilla-picker/blob/master/LICENSE.md)
  - [Eruda](https://eruda.liriliri.io/) - A console for Mobile Browsers  | [MIT License](https://github.com/liriliri/eruda/blob/master/LICENSE)
+
+ ## License
+
+Floatly is licensed under [(CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

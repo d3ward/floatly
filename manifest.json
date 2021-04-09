@@ -1,29 +1,29 @@
 {
   "manifest_version": 2,
   "name": "Floatly",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Floatly is an awesome floating button that brings quick actions to any website.",
   "permissions": ["tabs", "clipboardWrite","storage","activeTab","http://*/","https://*/","bookmarks"],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["src/js/background.js"],
     "persistent": false
   },
-  "options_page": "options.html",
+  "options_page": "src/options/options.html",
 
   "content_scripts": [{
     "matches": [
       "<all_urls>"
     ],
-    "js": ["content.js"]
+    "js": ["src/js/content.js"]
   }],
   "browser_action": {
-    "default_icon": "icons/icon256.png"
+    "default_icon": "src/png/icon256.png"
   },
   "web_accessible_resources": [
-    "eruda.min.js",
-    "eruda_toggle.js"
+    "src/js/eruda.min.js",
+    "src/js/eruda_toggle.js"
   ],
-  "icons": { "20": "icons/icon20.png",
-    "48": "icons/icon48.png",
-   "152": "icons/icon152.png" }
+  "icons": { "20": "src/png/icon20.png",
+    "48": "src/png/icon48.png",
+   "152": "src/png/icon152.png" }
 }
