@@ -32,7 +32,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       if (!response || !response.success) {
         chrome.runtime.lastError.message;
         chrome.tabs.executeScript(sender.tab.id, {
-          file: 'eruda_init.js'
+          file: './src/js/eruda_init.js'
         });
       }
     });
