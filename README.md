@@ -4,7 +4,7 @@
 	title="b2ntp" width="160" height="160" />
 </p>
 
-Floatly is an awesome floating button that brings quick actions from any website.
+Floatly is an awesome floating button that brings quick actions from any website.<br>
 Made to be mobile friendly first, but it also works on desktop.
 
 On mobile you can use Floatly on browsers that supports extensions like [Kiwi Browser](https://kiwibrowser.com/)
@@ -34,7 +34,7 @@ Download latest version -> [Releases](https://github.com/d3ward/floatly/releases
   
 ## Contributing
 
-If you have a suggestion feel free to share it by opening an issue
+If you have a suggestion feel free to share it by opening an issue<br>
 You can suggest an action to be added to Floatly , if it's doable , it will be implemented 
 
 ## Libraries & other projects included in Floatly
