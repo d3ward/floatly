@@ -1,6 +1,6 @@
 # Floatly
 <p align="center">
- <img src="icons/icon152.png" alt="MTI"
+ <img src="src/png/icon152.png" alt="Floatly"
 	title="b2ntp" width="160" height="160" />
 </p>
 
