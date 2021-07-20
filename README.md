@@ -14,6 +14,7 @@ Download latest version -> [Releases](https://github.com/d3ward/floatly/releases
 
   - Close current tab
   - Duplicate current tab
+  - Back to prevoius page
   - Go on top of page
   - Go on bottom of page
   - Enable fullscreen
