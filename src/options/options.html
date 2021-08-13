@@ -57,14 +57,12 @@
                 <li>
                     <div id="theme-toggle">
                         <span class="light-icon theme-icon">
-                            <svg fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                             </svg>
                         </span>
                         <span class="dark-icon theme-icon">
-                            <svg fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
                                     clip-rule="evenodd"></path>
@@ -86,56 +84,89 @@
         </nav>
     </header>
     <main>
-        
-        <h2>Actions available</h2>
-        <div class="cnt2" id="av"></div>
+        <h2>Floatly Style</h2>
+        <div class="tabs">
+            <input type="radio" name="f-style" id="tb2-1" value="fab" checked="checked">
+            <label for="tb2-1">Fab Button</label>
+            <div class="_aos">
+                <h2>Actions available</h2>
+                <div class="cnt2" id="av"></div>
+                <div id="sv">Click on icon for info here </div>
+                Drag actions from above to below
+                <h2>Your actions in Floatly</h2>
 
-        <div id="sv">Click on icon for info here </div>
-        Drag actions from above to below
-        <h2>Your actions in Floatly</h2>
+                <div id="uv"></div><br>
 
-        <div id="uv"></div><br>
+                <label for="fstyle">Fab Style:</label>
 
-        <label for="fpos">Floatly position:</label>
+                <select id="fstyle">
+                    <option value="0">Horizontal</option>
+                    <option value="1">Radial</option>
+                </select>
+                <label for="fpos">Floatly position:</label>
+                <button id="enablemm_bg"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M512 255.1c0 8.188-3.125 16.41-9.375 22.66l-72 72C424.4 356.9 416.2 360 408 360c-18.28 0-32-14.95-32-32 0-8.188 3.125-16.38 9.375-22.62L402.8 288H288v114.8l17.38-17.38C311.6 379.1 319.8 376 328 376c18.28 0 32 14.95 32 32 0 8.188-3.125 16.38-9.375 22.62l-72 72C272.4 508.9 264.2 512 256 512s-16.38-3.125-22.62-9.375l-72-72C155.1 424.4 152 416.2 152 408c0-17.05 13.73-32 32-32 8.188 0 16.38 3.125 22.62 9.375L224 402.8V288H109.3l17.38 17.38C132.9 311.6 136 319.8 136 328c0 17.05-13.73 32-32 32-8.188 0-16.38-3.125-22.62-9.375l-72-72C3.125 272.4 0 264.2 0 255.1s3.125-16.34 9.375-22.59l72-72C87.63 155.1 95.81 152 104 152c18.28 0 32 14.95 32 32 0 8.188-3.125 16.38-9.375 22.62L109.3 224H224V109.3l-17.4 17.3c-6.2 6.3-14.4 9.4-22.6 9.4-18.28 0-32-14.95-32-32 0-8.188 3.125-16.38 9.375-22.62l72-72C239.6 3.125 247.8 0 256 0s16.38 3.125 22.62 9.375l72 72C356.9 87.63 360 95.81 360 104c0 17.05-13.73 32-32 32-8.188 0-16.38-3.125-22.62-9.375L288 109.3V224h114.8l-17.38-17.38C379.1 200.4 376 192.2 376 184c0-17.05 13.73-32 32-32 8.188 0 16.38 3.125 22.62 9.375l72 72C508.9 239.6 512 247.8 512 255.1z"/></svg>&nbsp; Custom position</button>
+                <select id="fpos">
+                    <option value="0">Left_Bottom (default)</option>
+                    <option value="1">Right_Bottom</option>
+                </select>
+                <label for="sa-0">Long Press Action : </label>
+                <select id="sa-0"></select>
+                <label for="sa-1">Swipe Up Action : </label>
+                <select id="sa-1"></select>
+                <label for="sa-2">Swipe Right/Left Action :</label>
+                <select id="sa-2"></select>
+                <hr>
+                <h2>Colors</h2>
+                <div class="grid">
+                    <div>
+                        <label class="stt_cllb" for="stt_cl0">Floatly Color :</label>
+                        <div class="stt_clfrt" id="stt_cl0"></div>
+                    </div>
+                    <div>
+                        <label class="stt_cllb" for="stt_cl1">Floatly Icon Color :</label>
+                        <div class="stt_clfrt" id="stt_cl1"></div>
+                    </div>
+                    <div>
+                        <label class="stt_cllb" for="stt_cl2">Actions Color :</label>
+                        <div class="stt_clfrt" id="stt_cl2"></div>
+                    </div>
+                    <div>
+                        <label class="stt_cllb" for="stt_cl3">Actions Icon Color :</label>
+                        <div class="stt_clfrt" id="stt_cl3"></div>
+                    </div>
+                    <div>
+                        <label class="stt_cllb" for="stt_cl4">Actions Area Color :</label>
+                        <div class="stt_clfrt" id="stt_cl4"></div>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="f-style" id="tb2-2" value="duet">
+            <label for="tb2-2">Duet Bar</label>
+            <div class="_aos">
+                <h2>Duplet Bar Preview</h2>
 
-        <select id="fpos">
-            <option value="0">Left_Bottom (default)</option>
-            <option value="1">Right_Bottom</option>
-        </select>
-        <label for="sa-0">Long Press Action : </label>
-        <select id="sa-0"></select></div>
-        <label for="sa-1">Swipe Up Action : </label>
-        <select id="sa-1"></select>
-        <label for="sa-2">Swipe Right/Left Action :</label>
-        <select id="sa-2"></select>
-        <hr>
-        <div class="a_i fly_btn"><svg id="svg1" width="23px" height="50px" viewBox="0 0 144 219">
-                <path id="pth1"
-                    d="M 45.00,106.00 C 38.94,106.68 33.40,110.01 34.27,117.00 35.33,125.50 43.67,123.32 42.99,134.04 42.99,134.04 35.58,182.00 35.58,182.00 34.38,187.43 30.22,200.37 31.65,204.99 33.82,211.99 43.24,214.36 48.67,209.57 54.41,204.52 56.70,193.27 57.92,186.00 57.92,186.00 61.13,162.00 61.13,162.00 61.13,162.00 65.00,127.00 65.00,127.00 69.30,127.00 82.79,127.68 85.95,125.98 92.64,122.36 92.29,110.28 86.79,107.02 83.99,105.36 70.95,106.00 67.00,106.00 67.00,106.00 67.00,57.00 67.00,57.00 67.06,52.52 67.30,46.97 71.22,44.05 85.15,33.70 92.85,54.30 101.00,58.91 106.89,62.25 114.88,60.55 115.87,53.00 117.24,42.48 111.19,34.02 103.00,28.17 88.46,17.78 67.69,16.15 54.18,29.30 44.57,38.66 46.02,49.90 46.00,62.00 46.00,62.00 45.00,79.00 45.00,79.00 45.00,79.00 45.00,106.00 45.00,106.00 Z" />
-            </svg></div>
+                <label>Action 1 : </label>
+                <select id="duet-sa-0"></select>
+                <label>Action 2 :</label>
+                <select id="duet-sa-1"></select>
+                <label>Action 3 :</label><select id="duet-sa-2"></select>
+                <label>Action 4 :</label> <select id="duet-sa-3"></select>
+                <label>Action 5 :</label> <select id="duet-sa-4"></select>
+                <label>Action 6 :</label> <select id="duet-sa-5"></select>
+                <hr>
+                <h2>Colors</h2>
+                <div class="grid">
+                    <div>
+                        <label class="stt_cllb" for="stt_cl5">Background Color :</label>
+                        <div class="stt_clfrt" id="stt_cl5"></div>
+                    </div>
+                    <div>
+                        <label class="stt_cllb">Icons Color :</label>
+                        <div class="stt_clfrt" id="stt_cl6"></div>
+                    </div>
+                </div>
+            </div>
 
-        <h2>Colors</h2>
-        <div class="grid">
-            <div>
-                <label class="stt_cllb" for="stt_cl0">Floatly Color :</label>
-                <div class="stt_clfrt" id="stt_cl0"></div>
-            </div>
-            <div>
-                <label class="stt_cllb" for="stt_cl1">Floatly Icon Color :</label>
-                <div class="stt_clfrt" id="stt_cl1"></div>
-            </div>
-            <div>
-                <label class="stt_cllb" for="stt_cl2">Actions Color :</label>
-                <div class="stt_clfrt" id="stt_cl2"></div>
-            </div>
-            <div>
-                <label class="stt_cllb" for="stt_cl3">Actions Icon Color :</label>
-                <div class="stt_clfrt" id="stt_cl3"></div>
-            </div>
-            <div>
-                <label class="stt_cllb" for="stt_cl4">Actions Area Color :</label>
-                <div class="stt_clfrt" id="stt_cl4"></div>
-            </div>
         </div>
         <hr>
         <h2>Blacklist</h2>
@@ -146,7 +177,47 @@
             <div><input type="text" id="i-tb"></div>
             <div><button id="b-tb">Add</button></div>
         </div>
+        <div id="mm_bg">
+            <button id="mm_exit">Exit</button>
+            <button id="mm_reset">Default</button>
+            <div id="mm_move">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M512 255.1c0 8.188-3.125 16.41-9.375 22.66l-72 72C424.4 356.9 416.2 360 408 360c-18.28 0-32-14.95-32-32 0-8.188 3.125-16.38 9.375-22.62L402.8 288H288v114.8l17.38-17.38C311.6 379.1 319.8 376 328 376c18.28 0 32 14.95 32 32 0 8.188-3.125 16.38-9.375 22.62l-72 72C272.4 508.9 264.2 512 256 512s-16.38-3.125-22.62-9.375l-72-72C155.1 424.4 152 416.2 152 408c0-17.05 13.73-32 32-32 8.188 0 16.38 3.125 22.62 9.375L224 402.8V288H109.3l17.38 17.38C132.9 311.6 136 319.8 136 328c0 17.05-13.73 32-32 32-8.188 0-16.38-3.125-22.62-9.375l-72-72C3.125 272.4 0 264.2 0 255.1s3.125-16.34 9.375-22.59l72-72C87.63 155.1 95.81 152 104 152c18.28 0 32 14.95 32 32 0 8.188-3.125 16.38-9.375 22.62L109.3 224H224V109.3l-17.4 17.3c-6.2 6.3-14.4 9.4-22.6 9.4-18.28 0-32-14.95-32-32 0-8.188 3.125-16.38 9.375-22.62l72-72C239.6 3.125 247.8 0 256 0s16.38 3.125 22.62 9.375l72 72C356.9 87.63 360 95.81 360 104c0 17.05-13.73 32-32 32-8.188 0-16.38-3.125-22.62-9.375L288 109.3V224h114.8l-17.38-17.38C379.1 200.4 376 192.2 376 184c0-17.05 13.73-32 32-32 8.188 0 16.38 3.125 22.62 9.375l72 72C508.9 239.6 512 247.8 512 255.1z"/></svg>
+            </div>
+        </div>
+        <div id="f-1" class="f-preview">
 
+            <div id="fly">
+                <div id="fly_btn"><svg id="svg1" fill="currentColor" width="23px" height="50px" viewBox="0 0 144 219">
+                        <path id="pth1" fill="var(--cl1)"
+                            d="M 45.00,106.00 C 38.94,106.68 33.40,110.01 34.27,117.00 35.33,125.50 43.67,123.32 42.99,134.04 42.99,134.04 35.58,182.00 35.58,182.00 34.38,187.43 30.22,200.37 31.65,204.99 33.82,211.99 43.24,214.36 48.67,209.57 54.41,204.52 56.70,193.27 57.92,186.00 57.92,186.00 61.13,162.00 61.13,162.00 61.13,162.00 65.00,127.00 65.00,127.00 69.30,127.00 82.79,127.68 85.95,125.98 92.64,122.36 92.29,110.28 86.79,107.02 83.99,105.36 70.95,106.00 67.00,106.00 67.00,106.00 67.00,57.00 67.00,57.00 67.06,52.52 67.30,46.97 71.22,44.05 85.15,33.70 92.85,54.30 101.00,58.91 106.89,62.25 114.88,60.55 115.87,53.00 117.24,42.48 111.19,34.02 103.00,28.17 88.46,17.78 67.69,16.15 54.18,29.30 44.57,38.66 46.02,49.90 46.00,62.00 46.00,62.00 45.00,79.00 45.00,79.00 45.00,79.00 45.00,106.00 45.00,106.00 Z">
+                        </path>
+                    </svg><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg></div>
+                <div class="a_ib">
+                </div>
+            </div>
+        </div>
+        <div id="f-2" class="f-preview">
+            <div id="fly-r">
+                <div class="circular-menu">
+                    <div class="circle" id="circle"></div>
+                    <div id="fly_btn-r"><svg id="svg1" fill="currentColor" width="23px" height="50px"
+                            viewBox="0 0 144 219">
+                            <path id="pth1" fill="#ffffff"
+                                d="M 45.00,106.00 C 38.94,106.68 33.40,110.01 34.27,117.00 35.33,125.50 43.67,123.32 42.99,134.04 42.99,134.04 35.58,182.00 35.58,182.00 34.38,187.43 30.22,200.37 31.65,204.99 33.82,211.99 43.24,214.36 48.67,209.57 54.41,204.52 56.70,193.27 57.92,186.00 57.92,186.00 61.13,162.00 61.13,162.00 61.13,162.00 65.00,127.00 65.00,127.00 69.30,127.00 82.79,127.68 85.95,125.98 92.64,122.36 92.29,110.28 86.79,107.02 83.99,105.36 70.95,106.00 67.00,106.00 67.00,106.00 67.00,57.00 67.00,57.00 67.06,52.52 67.30,46.97 71.22,44.05 85.15,33.70 92.85,54.30 101.00,58.91 106.89,62.25 114.88,60.55 115.87,53.00 117.24,42.48 111.19,34.02 103.00,28.17 88.46,17.78 67.69,16.15 54.18,29.30 44.57,38.66 46.02,49.90 46.00,62.00 46.00,62.00 45.00,79.00 45.00,79.00 45.00,79.00 45.00,106.00 45.00,106.00 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div id="f-3" class="f-preview">
+            <div class="duplet-grid" id="duplet">
+            </div>
+        </div>
 
         <div class="sw">
             <table style="width:100%;" id="tbtb"></table>
@@ -161,13 +232,12 @@
     </main>
     <footer>
         <div class="grid">
-            <div>Floatly v1.0.5 </div>
+            <div>Floatly v2.0.0 </div>
             <div>Licensed under <b><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA
                         4.0)</a></b></div>
-            <div><a href="https://heroicons.dev/">Heroicons</a> licensed under <b><a
-                        href="https://github.com/tailwindlabs/heroicons/blob/master/LICENSE">MTI</a></b></div>
+            <div>Icons from <b><a href="https://heroicons.dev/">Heroicons</a></b> and <b><a href="https://fontawesome.com/v6.0">FontAwesome 6.0</a></b></div>
             <div> Made with
-                <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <svg class="_icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
                         clip-rule="evenodd"></path>
