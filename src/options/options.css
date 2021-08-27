@@ -3,11 +3,12 @@ html,
     --black: #060609;
     --white: #f2f4f7;
     --green: #2ECC40;
-    --blue: #0074D8;
+    --blue: #1f7da6;
+    --purple:#663fa6;
     --red: #FF4132;
     --orange: #FF851A;
     --yellow: #ffcd36;
-    --primary: var(--blue);
+    --primary: var(--purple);
     --secondary: #536390;
     --txt: #14191f;
     --txt-r: var(--white);
@@ -34,7 +35,8 @@ html,
 [data-theme="dark"] {
     --black: #060609;
     --white: #f2f4f7;
-    --blue: #4dacff;
+    --blue: #2eabe1;
+    --purple: #D65DB1;
     --green: #67e5a8;
     --red: #ff564d;
     --orange: #ff9f4d;
@@ -236,7 +238,6 @@ button,
   border-radius: var(--radius);
   margin: 0.5rem;
   height: 2.6rem;
-  min-width: 100px;
   transition: all 0.2s ease-in-out;
   -webkit-tap-highlight-color: transparent;
 }
@@ -621,7 +622,6 @@ select:hover {
 .tabs>div {
     width: 100%;
     display: none;
-    padding: 1rem;
     order: 99;
     flex-grow: 1;
 }
@@ -674,7 +674,9 @@ select:hover {
 .duplet-grid>div:hover {
     background: #ffffff30;
 }
-
+._mw-100{
+    min-width: 100px;
+}
 /* ----------------- Utilities ---------------- */
 ._radius {
     border-radius: var(--radius);
@@ -829,14 +831,16 @@ hr {
 .sw {
     border: 2px var(--cl2) solid;
     height: 200px;
-    margin-bottom: 20px;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-
-.sw table {
-    margin-bottom: 0;
+.sw>div{
+    display: flex;
+    align-items: center;
 }
 
 .user-list {
@@ -953,9 +957,8 @@ body .show-lrt {
     fill: '+c[1]+' !important;
 }
 
-#fly div svg {
+#fly div svg ,#fly_btn-r svg{
     height: 26px;
-    color: '+c[3]+' !important
 }
 
 #fly {
@@ -1020,6 +1023,7 @@ body .show-lrt {
     padding: 5px !important;
     left: calc(5px - var(--left));
     width: calc(100vw - 10px);
+    min-height: 50px;
     opacity: 0;
     visibility: hidden;
     background-color: var(--cl4) !important;
@@ -1163,4 +1167,13 @@ body .show-lrt {
 }
 .f-preview.show{
     display: block;
+}
+
+.chk{
+    width: 100%;
+}
+._flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
