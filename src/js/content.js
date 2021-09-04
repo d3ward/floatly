@@ -113,14 +113,14 @@ var acDivs = [
 var splist,posf;
 // Get use options and inject 
 chrome.storage.local.get({
-    style:"radial",
-    colors: ["#0878A5", "#ffffff", "#0878A5", "#ffffff", "#101010"],
+    style:"fab",
+    colors: ["#663fa6", "#ffffff", "#663fa6", "#ffffff", "#101010","#663fa6", "#ffffff"],
     userActions: [],
-    pos: ["20px","20px"],
-    fpos:0,
     fstyle:0,
-    splist:[1,2,3],
-    blist:["github.com","youtube.com"]
+    fpos:0,
+    pos: ["20px","20px"],
+    blist:["github.com","youtube.com"],
+    splist:[1,2,3]
 }, function (items) {
     let blist=items.blist;
     let curl=window.location.href;
@@ -166,7 +166,7 @@ chrome.storage.local.get({
             }
             let content= document.createElement('div');
             content.innerHTML= '<style>#duplet{display: grid;grid-template-columns: repeat('+a+', 1fr);width: 100%;margin: auto;'+
-               ' background:'+c[0]+';color:'+c[1]+'; position:fixed;bottom:0;z-index:99999999;}#duplet>div>svg{height:20px;margin:auto;}#duplet>div{position:relative;text-decoration:none;float:left;margin:6px;outline:0;border:none;border-radius:8px;text-align:center;padding:6px;}#duplet>div:after {content: "";background: '+c[1]+';display: block;position: absolute;width: 200px;height: 200px;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 50%;opacity: 0;transition: all 0.8s;}  #duplet>div:active:after {width: 0;height: 0;opacity: 0.7;transition: 0s;</style>'+
+               ' background:'+c[5]+';color:'+c[6]+'; position:fixed;bottom:0;z-index:99999999;}#duplet>div>svg{height:20px;margin:auto;}#duplet>div{position:relative;text-decoration:none;float:left;margin:6px;outline:0;border:none;border-radius:8px;text-align:center;padding:6px;}#duplet>div:after {content: "";background: '+c[1]+';display: block;position: absolute;width: 200px;height: 200px;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 50%;opacity: 0;transition: all 0.8s;}  #duplet>div:active:after {width: 0;height: 0;opacity: 0.7;transition: 0s;</style>'+
                 '<div id="duplet">'+innerString+'</div>';
             //Add duplet bar
             document.body.appendChild(content);

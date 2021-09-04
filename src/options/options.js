@@ -155,7 +155,7 @@ function save_options() {
     var fstyle=document.getElementById("fstyle").selectedIndex;
     var fpos=document.getElementById("fpos").selectedIndex;
     for (var i = 0; i < uc.length; i++)userActions.push(uc[i].getAttribute('data-id'));
-    for (let j = 0; j < 3; j++) splist.push(document.getElementById("sa-"+j).selectedIndex);
+    for (let j = 0; j < 3; j++) splist.push(document.getElementById("sa-"+j).value);
     chrome.storage.local.set({
       style: style,
       colors: colors,
@@ -172,7 +172,7 @@ function save_options() {
     for (let j = 0; j < 6; j++) userActions.push(document.getElementById("duet-sa-"+j).value);
     chrome.storage.local.set({
       style: style,
-      dcolors: dcolors,
+      colors: colors,
       blist : blist,
       userActions:userActions
     }, function () {
@@ -301,7 +301,7 @@ function restore_options() {
       var colors = items.colors, userActions = items.userActions,blacklist=items.blist,fpos=items.fpos,pos=items.pos,splist=items.splist;
       for (let j = 0; j < 3; j++){
         document.getElementById("sa-"+j).innerHTML=actionsString;
-        document.getElementById("sa-"+j).selectedIndex=splist[j];
+        document.getElementById("sa-"+j).value=splist[j];
       }
 
       for (var i = 0; i < actionsDiv.length; i++){
