@@ -146,6 +146,11 @@ function save_options() {
   var colors=[],userActions=[],blist=[],splist=[],dcolors=[],pos=[],fpos=0;
   var style =document.querySelector('input[name="f-style"]:checked').value;
   var tbtb=document.querySelectorAll("#tbtb>div");
+  var options = {
+    "opt0":document.getElementById("opt0").checked,
+    "scroll_speed":document.getElementById("scroll_speed").value,
+    "home_url":document.getElementById("home_url").value
+    };
   for (var i = 0; i < 7; i++) colors.push(getComputedStyle(document.body).getPropertyValue("--cl" + i));
   for (let i = 0; i < tbtb.length; i++) blist.push(tbtb[i].textContent);
   if(style == "fab"){
@@ -162,10 +167,7 @@ function save_options() {
       userActions: userActions,
       pos:pos,
       fpos:fpos,
-      options:{
-        "opt0":document.getElementById("opt0").checked,
-        "scroll_speed":document.getElementById("scroll_speed").value
-        },
+      options:options,
       fstyle:fstyle,
       blist : blist,
       splist:splist
@@ -179,10 +181,7 @@ function save_options() {
       style: style,
       colors: colors,
       blist : blist,
-      options:{
-        "opt0":document.getElementById("opt0").checked,
-        "scroll_speed":document.getElementById("scroll_speed").value
-        },
+      options:options,
       userActions:userActions
     }, function () {
       showBox('Options saved.<br>Remember to reload the page where the Duplet Bar is used to update actions'); 
@@ -300,7 +299,7 @@ function restore_options() {
     userActions: [-1,-1,-1,-1,-1,-1],
     fstyle:0,
     fpos:0,
-    options:{"opt0":false,"scroll_speed":800},
+    options:{"opt0":false,"scroll_speed":800,"home_url":"chrome://newtab"},
     pos: ["20px","20px"],
     blist:["github.com","youtube.com"],
     splist:[1,2,3]
@@ -324,7 +323,7 @@ function restore_options() {
             av += actionsDiv[i];
         }   
       }
-      console.log(options["opt0"]);
+      document.getElementById("home_url").value=options["home_url"];
        //Border radius slider for Search Bar Logo
       const ss = document.getElementById("scroll_speed");
       const ssv = document.getElementById("scroll_speed_v");

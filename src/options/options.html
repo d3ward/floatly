@@ -189,13 +189,16 @@
         <hr>
         <h2>Options</h2>
                 <label for="opt0">
-                    <span>Hide on scroll</span> 
+                    <span>Hide on scroll</span> </label>
                     <input type="checkbox" id="opt0" class="toggle"></label>
-                </label>
-               <label >
-                   Scroll speed in ms for go top/bottom : <span id="scroll_speed_v">10</span>
+                
+               <label for="scroll_speed">
+                   Scroll speed in ms for go top/bottom : <span id="scroll_speed_v">10</span></label>
                    <input type="range" id="scroll_speed" value="10" min="0" max="1000">
-               </label>
+               
+               <label for="home_url"> Home Page URL</label>
+                   <input type="text" value="chrome://newtab" id="home_url">
+               
         <hr>
         <h2>Blacklist</h2>
         <h3><i>Floatly will not be added in the below domains</i></h3>
