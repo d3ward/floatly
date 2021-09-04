@@ -1,4 +1,5 @@
 
+
 function addStyle(css) {
     let head, style;
     head = document.getElementsByTagName('head')[0];
@@ -48,6 +49,18 @@ function openB(){
     let flt=document.getElementById("fly"); 
     if(flt.classList.contains("open")) flt.classList.remove("open"); 
     else flt.classList.add("open");
+}
+function enableAutoHideOnScroll(s,f,fb){
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById(s).style.bottom = f;
+    } else {
+        document.getElementById(s).style.bottom = fb;
+    }
+    prevScrollpos = currentScrollPos;
+    }
 }
 
 function addScriptToHead(url) {
@@ -118,6 +131,7 @@ chrome.storage.local.get({
     userActions: [],
     fstyle:0,
     fpos:0,
+    options:{"opt0":false},
     pos: ["20px","20px"],
     blist:["github.com","youtube.com"],
     splist:[1,2,3]
@@ -141,7 +155,7 @@ chrome.storage.local.get({
             for (let i = 0; i < ua.length; i++) innerString += acDivs[ua[i]];
             innerString += '</div>';
             let content= document.createElement('div');
-            content.innerHTML= '<style>#fly div svg{height:26px;color:'+c[3]+' !important}#fly{position:fixed;bottom:'+pos[0]+';left:'+pos[1]+';padding:0!important;width:50px;margin:0;height:50px;z-index: 1000000;}#fly_btn{position: absolute;z-index: 1000000;height:50px;width:50px;background-color: ' + c[0] + '!important; color:' + c[1] + '!important; border-radius:50%; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15); user-select: none;display: flex;justify-content: center;align-items: center;}#fly_btn #svg1,#fly.open #fly_btn svg:nth-child(2){display:inline;}#ac4.fullscreen svg:nth-child(2),#ac4 svg:nth-child(1){display:inline;}#ac4.fullscreen svg:nth-child(1),#ac4 svg:nth-child(2){display:none;}#fly_btn svg:nth-child(2),#fly.open #fly_btn #svg1{display:none;}::-webkit-scrollbar{display: none;}.a_ib{position:absolute;overflow:auto;display:flex;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:5px;bottom:calc(100% + 10px);padding:5px!important;left:calc(5px - '+pos[1]+');width:calc(100vw - 10px);opacity:0;visibility:hidden;background-color:'+c[4]+'!important;border-radius:50px;box-shadow:0 5px 20px #101010;transition:all .3s ease-in-out}.a_ib div{display:inline-flex;justify-content:center;align-items:center;width:46px;flex:0 0 auto;height:46px;padding:0!important;color:'+c[3]+';background-color:'+c[2]+'!important;border-radius:50%;box-shadow:0 5px 20px rgb(0 0 0 / 15%)}#fly.open .a_ib{opacity:1;visibility:visible}</style>'+
+            content.innerHTML= '<style>#fly div svg{height:26px;color:'+c[3]+' !important}#fly{position:fixed;bottom:'+pos[0]+';left:'+pos[1]+';padding:0!important;width:50px;margin:0;height:50px;z-index: 1000000;transition: bottom .1s linear;}#fly_btn{position: absolute;z-index: 1000000;height:50px;width:50px;background-color: ' + c[0] + '!important; color:' + c[1] + '!important; border-radius:50%; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15); user-select: none;display: flex;justify-content: center;align-items: center;}#fly_btn #svg1,#fly.open #fly_btn svg:nth-child(2){display:inline;}#ac4.fullscreen svg:nth-child(2),#ac4 svg:nth-child(1){display:inline;}#ac4.fullscreen svg:nth-child(1),#ac4 svg:nth-child(2){display:none;}#fly_btn svg:nth-child(2),#fly.open #fly_btn #svg1{display:none;}::-webkit-scrollbar{display: none;}.a_ib{position:absolute;overflow:auto;display:flex;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:5px;bottom:calc(100% + 10px);padding:5px!important;left:calc(5px - '+pos[1]+');width:calc(100vw - 10px);opacity:0;visibility:hidden;background-color:'+c[4]+'!important;border-radius:50px;box-shadow:0 5px 20px #101010;transition:all .3s ease-in-out}.a_ib div{display:inline-flex;justify-content:center;align-items:center;width:46px;flex:0 0 auto;height:46px;padding:0!important;color:'+c[3]+';background-color:'+c[2]+'!important;border-radius:50%;box-shadow:0 5px 20px rgb(0 0 0 / 15%)}#fly.open .a_ib{opacity:1;visibility:visible}</style>'+
                 '<div id="fly">'+innerString+'</div>';
             //Add floatly
             document.body.appendChild(content);
@@ -155,7 +169,11 @@ chrome.storage.local.get({
                 fbtn.addEventListener("touchmove", moveTouch, false);
                 fbtn.addEventListener("touchend", endTouch, false);
             }
+            if(items.options["opt0"]){
+                enableAutoHideOnScroll("fly",pos[0],'calc(-60px + '+pos[0]+')');
+            }
         }else if(items.style == "duet"){
+            
             if(ua.includes(17)>-1) chrome.runtime.sendMessage({book:"check",url:window.location.href});
             let innerString = '';
             let a=0;
@@ -166,14 +184,16 @@ chrome.storage.local.get({
             }
             let content= document.createElement('div');
             content.innerHTML= '<style>#duplet{display: grid;grid-template-columns: repeat('+a+', 1fr);width: 100%;margin: auto;'+
-               ' background:'+c[5]+';color:'+c[6]+'; position:fixed;bottom:0;z-index:99999999;}#duplet>div>svg{height:20px;margin:auto;}#duplet>div{position:relative;text-decoration:none;float:left;margin:6px;outline:0;border:none;border-radius:8px;text-align:center;padding:6px;}#duplet>div:after {content: "";background: '+c[1]+';display: block;position: absolute;width: 200px;height: 200px;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 50%;opacity: 0;transition: all 0.8s;}  #duplet>div:active:after {width: 0;height: 0;opacity: 0.7;transition: 0s;</style>'+
+               ' background:'+c[5]+';color:'+c[6]+'; position:fixed;bottom:0;z-index:99999999;transition: bottom .1s linear;}#duplet>div>svg{height:20px;margin:auto;}#duplet>div{position:relative;text-decoration:none;float:left;margin:6px;outline:0;border:none;border-radius:8px;text-align:center;padding:6px;}#duplet>div:after {content: "";background: '+c[1]+';display: block;position: absolute;width: 200px;height: 200px;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 50%;opacity: 0;transition: all 0.8s;}  #duplet>div:active:after {width: 0;height: 0;opacity: 0.7;transition: 0s;</style>'+
                 '<div id="duplet">'+innerString+'</div>';
             //Add duplet bar
             document.body.appendChild(content);
             for (let i = 0; i < ua.length; i++) 
                 if(ua[i]!=-1) 
                 document.getElementById('ac' + ua[i]).onclick = function (event) {aFunctions[event.currentTarget.id]();};
-            
+                if(items.options["opt0"]){
+                    enableAutoHideOnScroll("duplet",0,"-50px");
+                }
         }else{
             posf=f;
             if(ua.includes(17)>-1) chrome.runtime.sendMessage({book:"check",url:window.location.href});
@@ -182,7 +202,7 @@ chrome.storage.local.get({
             for (let i = 0; i < ua.length; i++) innerString += acDivs[ua[i]];
             innerString += '</div><div id="fly_btn">'+floatly_icon+'</div></div>';
             let content= document.createElement('div');
-            content.innerHTML= '<style>#fly div svg{height:25px;color:'+c[3]+' !important}#fly{position:fixed;bottom:calc(-125px + '+pos[0]+');left:calc(-125px + '+pos[1]+');width: 300px;height: 300px;padding: 0 !important;margin: 0;z-index: 1000;pointer-events:none;}.circular-menu{width:300px;height:300px;margin:0 auto;position:relative;pointer-events:none;}.circle{'+((f==1)?"transform: rotateZ(-90deg);":"")+'width:300px;height:300px;opacity:0;visibility:hidden;border-radius:50%;background-color:' + c[4] + '!important;}.open.circle{opacity:1;visibility:visible!important;pointer-events:auto;}.circle div{text-decoration:none;background-color:' + c[2] + '!important;color:' + c[2] + '!important;display:flex;align-items:center;justify-content:center;border-radius:50%;height:46px;width:46px;margin-left:-23px;margin-top:-23px;position:absolute;text-align:center}#fly_btn{top:calc(50% - 25px);left:calc(50% - 25px);position:absolute;z-index:1000000;height:50px;width:50px;background-color:' + c[0] + '!important;color:' + c[1] + '!important;border-radius:50%;box-shadow:0 5px 20px rgb(0 0 0 / 15%);user-select:none;display:flex;justify-content:center;align-items:center;pointer-events:auto;}</style>'+
+            content.innerHTML= '<style>#fly div svg{height:25px;color:'+c[3]+' !important}#fly{position:fixed;bottom:calc(-125px + '+pos[0]+');left:calc(-125px + '+pos[1]+');width: 300px;height: 300px;padding: 0 !important;transition: bottom .1s linear;margin: 0;z-index: 1000;pointer-events:none;}.circular-menu{width:300px;height:300px;margin:0 auto;position:relative;pointer-events:none;}.circle{'+((f==1)?"transform: rotateZ(-90deg);":"")+'width:300px;height:300px;opacity:0;visibility:hidden;border-radius:50%;background-color:' + c[4] + '!important;}.open.circle{opacity:1;visibility:visible!important;pointer-events:auto;}.circle div{text-decoration:none;background-color:' + c[2] + '!important;color:' + c[2] + '!important;display:flex;align-items:center;justify-content:center;border-radius:50%;height:46px;width:46px;margin-left:-23px;margin-top:-23px;position:absolute;text-align:center}#fly_btn{top:calc(50% - 25px);left:calc(50% - 25px);position:absolute;z-index:1000000;height:50px;width:50px;background-color:' + c[0] + '!important;color:' + c[1] + '!important;border-radius:50%;box-shadow:0 5px 20px rgb(0 0 0 / 15%);user-select:none;display:flex;justify-content:center;align-items:center;pointer-events:auto;}</style>'+
                 '<div id="fly">'+innerString+'</div>';
             //Add floatly
             document.body.appendChild(content);
@@ -253,6 +273,9 @@ chrome.storage.local.get({
                 document.addEventListener(mLstnr[1], mouseup,{passive:false});
               };
               rotate(document.getElementById("circle"));
+              if(items.options["opt0"]){
+                enableAutoHideOnScroll("fly",'calc(-125px + '+pos[0]+')','calc(-200px + '+pos[0]+')');
+            }
         }
     }
 });

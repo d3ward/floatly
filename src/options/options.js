@@ -170,10 +170,12 @@ function save_options() {
     });
   }else{
     for (let j = 0; j < 6; j++) userActions.push(document.getElementById("duet-sa-"+j).value);
+    console.log(document.getElementById("opt0").checked);
     chrome.storage.local.set({
       style: style,
       colors: colors,
       blist : blist,
+      options:{"opt0":document.getElementById("opt0").checked},
       userActions:userActions
     }, function () {
       showBox('Options saved.<br>Remember to reload the page where the Duplet Bar is used to update actions'); 
@@ -291,6 +293,7 @@ function restore_options() {
     userActions: [-1,-1,-1,-1,-1,-1],
     fstyle:0,
     fpos:0,
+    options:{"opt0":false},
     pos: ["20px","20px"],
     blist:["github.com","youtube.com"],
     splist:[1,2,3]
@@ -298,7 +301,7 @@ function restore_options() {
       var av = " ",uv = " ";
       var avc=0;
       fstyle=items.fstyle;
-      var colors = items.colors, userActions = items.userActions,blacklist=items.blist,fpos=items.fpos,pos=items.pos,splist=items.splist;
+      var colors = items.colors, userActions = items.userActions,blacklist=items.blist,fpos=items.fpos,pos=items.pos,splist=items.splist,options=items.options;
       for (let j = 0; j < 3; j++){
         document.getElementById("sa-"+j).innerHTML=actionsString;
         document.getElementById("sa-"+j).value=splist[j];
@@ -314,7 +317,8 @@ function restore_options() {
             av += actionsDiv[i];
         }   
       }
-      
+      console.log(options["opt0"]);
+      document.getElementById("opt0").checked = options["opt0"];
       document.getElementById("av").innerHTML = av;
       document.getElementById("uv").innerHTML = uv;
       document.getElementById("fpos").selectedIndex=fpos;

@@ -557,7 +557,7 @@ select:hover {
         border-radius: 50%;
         width: 15px;
         height: 15px;
-        background: var(--border-c);
+        background: var(--bg);
     }
 
     input[type="checkbox"].toggle:checked:after {
@@ -644,7 +644,6 @@ select:hover {
     grid-template-columns: repeat(var(--rv), 1fr);
     width: 100%;
     margin: auto;
-    min-height: 70px;
     border-radius: 4px;
     background: var(--cl5);
     position: fixed;
@@ -660,20 +659,18 @@ select:hover {
 }
 
 .duplet-grid>div {
+    position: relative;
     text-decoration: none;
     float: left;
-    margin: 10px;
-    outline: none;
+    margin: 6px;
+    outline: 0;
     border: none;
-    border-radius: 8px;
     color: var(--cl6);
+    border-radius: 8px;
     text-align: center;
-    padding: 1em .2em;
+    padding: 6px;
 }
 
-.duplet-grid>div:hover {
-    background: #ffffff30;
-}
 ._mw-100{
     min-width: 100px;
 }
