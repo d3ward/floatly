@@ -9,7 +9,8 @@ function addStyle(css) {
     style.innerHTML = css;
     head.appendChild(style);
 }
-function scrollTo(element, to, duration) {
+var scroll_speed=800;
+function scrollTo(element, to,duration) {
     if (duration <= 0) return;
     let difference = to - element.scrollTop;
     let perTick = difference / duration * 10;
@@ -103,8 +104,8 @@ var acDivs = [
     var aFunctions = {
     ac0: function () {chrome.runtime.sendMessage({closeThis: true});},
     ac1: function () {window.open(window.location.href);},
-    ac2: function () {scrollTo(document.documentElement, 0, 800);},
-    ac3: function () {scrollTo(document.documentElement, document.body.clientHeight, 800);},
+    ac2: function () {scrollTo(document.documentElement, 0,scroll_speed);},
+    ac3: function () {scrollTo(document.documentElement, document.body.clientHeight,scroll_speed);},
     ac4: function () {openFS();},
     ac5: function () {chrome.runtime.sendMessage({copyToClip: true});},
     ac6: function () {chrome.runtime.sendMessage({newTabInc: true});},
@@ -131,7 +132,7 @@ chrome.storage.local.get({
     userActions: [],
     fstyle:0,
     fpos:0,
-    options:{"opt0":false},
+    options:{"opt0":false,"scroll_speed":800},
     pos: ["20px","20px"],
     blist:["github.com","youtube.com"],
     splist:[1,2,3]
@@ -146,6 +147,7 @@ chrome.storage.local.get({
         let c = items.colors;
         let pos=items.pos;
         let f=items.fpos;
+        scroll_speed=items.options["scroll_speed"];
         const floatly_icon= '<svg width="120" height="50px" viewBox="0 0 375 375" xmlns="http://www.w3.org/2000/svg"><g fill="'+c[1]+'"><path d="M88.145 344.395c.635-.034.01-.016-.016.039 55.687-.237 82.908-79.477 82.156-106.913l-.477-84.963c.504-13.136.047-27.086.047-40.261-33.154-1.467-75.592 31.933-81.458 66.23 0 0 8.747 150.07-.252 165.868z" fill-opacity=".778" /><path d="M90.45 216.65l1.32 58.446c18.794-22.983 48.96-40.274 77.798-44.567 95.996-9.51 95.878-57.47 94.727-76.747-16.568 6.26-56.987-8.573-94.301 0-41.389 8.484-74.504 47.715-79.543 62.868zm208.732-181.1c-21.638 7.432-82.703-11.041-128.245 0-45.542 11.04-88.642 73.618-82.54 142.977 10.616-29.708 59.812-64.162 81.457-66.23 127.386-4.045 128.283-49.094 129.328-76.748z" /></g></svg>';
         if(items.style == "fab" && items.fstyle == 0){
             posf=f;

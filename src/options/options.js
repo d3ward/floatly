@@ -162,6 +162,10 @@ function save_options() {
       userActions: userActions,
       pos:pos,
       fpos:fpos,
+      options:{
+        "opt0":document.getElementById("opt0").checked,
+        "scroll_speed":document.getElementById("scroll_speed").value
+        },
       fstyle:fstyle,
       blist : blist,
       splist:splist
@@ -170,12 +174,15 @@ function save_options() {
     });
   }else{
     for (let j = 0; j < 6; j++) userActions.push(document.getElementById("duet-sa-"+j).value);
-    console.log(document.getElementById("opt0").checked);
+    
     chrome.storage.local.set({
       style: style,
       colors: colors,
       blist : blist,
-      options:{"opt0":document.getElementById("opt0").checked},
+      options:{
+        "opt0":document.getElementById("opt0").checked,
+        "scroll_speed":document.getElementById("scroll_speed").value
+        },
       userActions:userActions
     }, function () {
       showBox('Options saved.<br>Remember to reload the page where the Duplet Bar is used to update actions'); 
@@ -293,7 +300,7 @@ function restore_options() {
     userActions: [-1,-1,-1,-1,-1,-1],
     fstyle:0,
     fpos:0,
-    options:{"opt0":false},
+    options:{"opt0":false,"scroll_speed":800},
     pos: ["20px","20px"],
     blist:["github.com","youtube.com"],
     splist:[1,2,3]
@@ -318,6 +325,15 @@ function restore_options() {
         }   
       }
       console.log(options["opt0"]);
+       //Border radius slider for Search Bar Logo
+      const ss = document.getElementById("scroll_speed");
+      const ssv = document.getElementById("scroll_speed_v");
+      var ss_v = options["scroll_speed"];
+      ssv.innerText=ss_v;
+      ss.value=ss_v;
+      ss.addEventListener("input", function () {
+        ssv.innerText=parseInt(ss.value);
+      });
       document.getElementById("opt0").checked = options["opt0"];
       document.getElementById("av").innerHTML = av;
       document.getElementById("uv").innerHTML = uv;
