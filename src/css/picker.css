@@ -1,0 +1,13 @@
+.layout_default.picker_wrapper{
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    gap: 10px;
+}
+.layout_default.picker_wrapper>* {
+    margin: 1em;
+    border-radius: 5px;
+}
+.layout_default .picker_editor{
+    width: auto;
+}
