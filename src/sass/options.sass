@@ -72,13 +72,14 @@ body
 		text-decoration: none
 		color: var(--ftlcl8)
 
-#av
+#av,#fab_s_cnt
 	border: 2px solid var(--ftlcl2)
 	display: flex
 	flex-wrap: wrap
 	justify-content: left
 	min-height: 50px
 
+#fab_s_cnt div,
 #av div,
 #uv div,
 .fly_btn
@@ -90,7 +91,8 @@ body
 	align-items: center
 
 #av div>svg,
-#uv div>svg
+#fab_s_cnt div>svg
+#uv div>svg ,.fab_radial div>svg
 	height: 25px
 
 #sv option,
@@ -109,6 +111,7 @@ body
 	background-color: #ddd
 
 #uv,
+#fab_s_cnt,
 #av,
 .sw,
 #uv::-webkit-scrollbar-track,
@@ -174,7 +177,8 @@ body
 	position: relative
 	width: 30px
 
-#stt_cl0
+#stt_cl0,
+.fab_btn
 	background: var(--ftlcl0)
 
 #stt_cl1,
@@ -202,24 +206,96 @@ body
 #stt_cl2,
 #uv div,
 #av div,
+#fab_s_cnt div,
+#fab_s_cnt,
 #av
 	background: var(--ftlcl2)
 
 #pth1
 	fill: '+c[1]+' !important
 
+.fab_wrap
+	padding: 0 !important
+	margin: 0
+	z-index: 1000
+.fab_btn
+	position: fixed
+	z-index: 1010
+	height: 50px
+	width: 50px
+	bottom: var(--fab-y)
+	left: var(--fab-x)
+	background-color: var(--ftlcl0) !important
+	color: var(--ftlcl1) !important
+	border-radius: 50%
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15)
+	user-select: none
+	display: flex
+	justify-content: center
+	align-items: center
+	pointer-events: auto
+	& svg
+		fill: currentColor
+		height: 26px
+.fab_wrap.open
+	pointer-events: unset !important
+	& .fab_cnt
+		opacity: 1 !important
+		visibility: visible !important
+
+#ac4.fullscreen svg:nth-child(2),
+#ac4 svg:nth-child(1)
+	display: inline
+
+#ac4.fullscreen svg:nth-child(1),
+#ac4 svg:nth-child(2)
+	display: none
 
 ::-webkit-scrollbar
 	display: none
 
-.f-preview
-	display: none
-	&.show
-		display: block
-@import ./fab/fab
-@import ./fab/fab_h
-@import ./fab/fab_r
-@import ./fab/fab_s
+#fab_h_cnt
+	position: fixed
+	overflow: auto
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	overflow-x: auto
+	gap: 5px
+	bottom: calc(60px + var(--fab-y))
+	padding: 5px !important
+	left: 5px
+	width: calc(100vw - 10px)
+	min-height: 50px
+	opacity: 0
+	visibility: hidden
+	background-color: var(--ftlcl4) !important
+	border: solid 2px var(--ftlcl5)
+	border-radius: 50px
+	transition: all .3s ease-in-out
+
+	& div
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		width: 46px
+		flex: 0 0 auto
+		height: 46px
+		padding: 0 !important
+		color: var(--ftlcl3)
+		background-color: var(--ftlcl2) !important
+		border-radius: 50%
+
+#fab_r
+	position: fixed
+	bottom: calc(-125px + var(--fab-y) )
+	left: calc(-125px + var(--fab-x) )
+	width: 300px
+	height: 300px
+	padding: 0 !important
+	margin: 0
+	pointer-events: none
+	z-index: 1000
 
 #mm_bg
 	visibility: hidden
@@ -229,7 +305,7 @@ body
 	left: 0
 	height: 100vh
 	width: 100vw
-	z-index: 9999999
+	z-index: 10000
 	backdrop-filter: blur(4px)
 	display: none
 	align-items: center
@@ -242,7 +318,36 @@ body
 		visibility: visible
 		opacity: 1
 
-#mm_move
+#fab_r_cnt
+	width: 300px
+	height: 300px
+	opacity: 0
+	visibility: hidden
+	border-radius: 50%
+	background-color: var(--ftlcl4) !important
+	border: solid 2px var(--ftlcl5) !important
+
+.open #fab_r_cnt
+	opacity: 1
+	visibility: visible !important
+	pointer-events: auto
+
+	& div
+		text-decoration: none
+		background-color: var(--ftlcl2) !important
+		color: var(--ftlcl3) !important
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50%
+		height: 46px
+		width: 46px
+		margin-left: -23px
+		margin-top: -23px
+		position: absolute
+		text-align: center
+
+#fly_btn-r ,#mm_move,#fly_btn-sheet
 	bottom: calc(50% - 25px)
 	left: calc(50% - 25px)
 	position: absolute
@@ -267,6 +372,11 @@ body
 	&>svg
 		height: 30px
 
+.f-preview
+	display: none
+	&.show
+		display: block
+
 .chk
 	width: 100%
 
@@ -281,3 +391,14 @@ body
 
 .layout_default .picker_editor
 	width: auto
+
+.bs-sheet
+	min-height: unset
+	background: var(--ftlcl4)!important
+
+.bs-handle>span
+	background: var(--ftlcl6)!important
+
+.bs-footer
+	border-color: var(--ftlcl6)!important
+	color: var(--ftlcl6)!important

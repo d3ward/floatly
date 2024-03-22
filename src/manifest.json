@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Floatly",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Floatly is an awesome floating button that brings quick actions to any website.",
   "permissions": ["tabs", "clipboardWrite","storage","activeTab","http://*/","https://*/","bookmarks"],
   "background": {

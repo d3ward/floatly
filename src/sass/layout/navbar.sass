@@ -1,0 +1,67 @@
+/* ------------------ Navbar ------------------ */
+header
+	width: 100%
+	z-index: 2
+	top: 0
+
+nav
+	display: flex
+	justify-content: space-between
+	align-items: center
+	background: var(--bg-nav)
+	border-bottom: 1px solid var(--brd)
+	padding: .4rem
+	width: 100%
+	margin: auto
+	max-width: 60rem
+	>.nav-overlay
+		display: none
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: rgba(17, 17, 17, 0.6)
+		z-index: -1
+	*
+		margin: 0
+		padding: 0
+		display: flex
+		align-items: center
+	>button
+		display: none
+		margin: 0 !important
+		min-width: auto
+		font-size: 0.875em
+		padding: .5rem
+		>svg line
+			stroke: currentColor
+			stroke-width: 4
+			stroke-linecap: round
+			transform-origin: 12px 12px
+			transition: all .4s
+	>a
+		gap: .5rem
+		font-size: 1.6rem
+		padding: 0.4rem
+		>svg
+			height: 1.6rem !important
+			width: 1.6rem !important
+	a:hover
+		border: none !important
+	>ul
+		flex-direction: row
+		justify-content: space-between
+		list-style: none
+		width: auto
+		gap: .5rem
+		>li
+			gap: .5rem
+		>li >a,>li .nav-item
+			padding: .4rem
+			border-radius: var(--radius)
+			color: var(--txt)
+			&:hover,&.active
+				background: var(--bg-nav-h)
+			&.active
+				color: var(--primary)

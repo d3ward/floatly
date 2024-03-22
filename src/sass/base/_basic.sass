@@ -1,0 +1,82 @@
+/* ---------------- Basic resets and improvements --------------- */
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+*, *:before, *:after
+	box-sizing: border-box
+/* -------------------*/
+
+*:focus:not(:focus-visible)
+	outline: 0
+*:focus-visible
+	outline: .1rem solid var(--focus)
+	outline-offset: .1rem
+html
+	text-rendering: optimizeLegibility
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif
+	font-size: 16px
+	color: var(--txt)
+	background: var(--bg)
+body
+	min-height: 100vh
+	display: flex
+	flex-flow: wrap column
+	gap: .5rem
+	align-items: center
+	justify-content: center
+
+	@media (prefers-reduced-motion: no-preference)
+		scroll-behavior: smooth
+body,html
+	margin: 0
+	padding: 0
+header>*,main>*,footer>*
+	max-width: 60rem
+
+ol, ul
+	list-style: none
+	display: flex
+	flex-direction: column
+	gap: .3rem
+.keep-ls
+	list-style: unset
+img
+	max-width: 100%
+
+table
+	border-collapse: collapse
+
+textarea
+	white-space: revert
+
+hr
+	border: 0
+	border-top: .1rem solid var(--brd)
+
+section
+	overflow-x: hidden
+	display: flex
+	flex-direction: column
+
+.better_r
+	-webkit-font-smoothing: antialiased!important
+	-moz-font-smoothing: antialiased!important
+	font-size: 16px
+	letter-spacing: .7px
+	line-height: 1.5
+	text-align: justify
+	text-rendering: optimizelegibility!important

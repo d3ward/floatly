@@ -1,7 +1,5 @@
-<<<<<<< Updated upstream
-node_modules/
-=======
-/node_modules
+
+node_modules
 dist
 /.vscode
 .DS_Store
@@ -9,4 +7,3 @@ dist
 .env
 .env.local
 .env.development
->>>>>>> Stashed changes

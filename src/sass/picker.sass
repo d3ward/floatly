@@ -1,0 +1,45 @@
+
+.picker_wrapper
+	background: transparent!important
+	box-shadow: none!important
+	margin: 0 auto!important
+
+	&>*
+		box-shadow: none!important
+		margin: 1em!important
+		border-radius: 5px!important
+		border: 0.1rem solid var(--brd)
+
+.picker_editor
+	width: 100%!important
+	order: 2!important
+	border: none
+
+.picker_wrapper button, .picker_wrapper input
+	box-shadow: none!important
+
+.picker_sample
+	width: 100%
+	height: 2.6rem
+
+.picker_cancel,.picker_done
+	display: flex
+	margin: 0!important
+
+.picker_cancel
+	width: 50%
+	order: 3!important
+
+	& button,.picker_done button
+		width: 100%
+
+.picker_done
+	display: none!important
+
+.picker_sample::before
+	border-radius: 5px
+
+.picker_wrapper button
+	background-image: none!important
+	background: var(--c22)!important
+	color: var(--c20)!important

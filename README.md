@@ -47,29 +47,3 @@ You can suggest an action to be added to Floatly , if it's doable , it will be i
  ## License
 
 Floatly is licensed under [(CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-
-
-
-
-Screenshot 
-clear cache
-translate
-save to pdf
-reading mode
-tab manager
-
-
-Wipe the recent application Cache
-Wipe the recent browser cache
-Wipe the recent browser cookies
-Wipe the recent download list
-Wipe the recent stored files
-Wipe the recent form data
-Wipe the recent browser history
-Wipe the recent IndexedDB databases
-Wipe the recent local storage
-Wipe the recent stored certificates
-Wipe the recent Passwords (dangerous zone!)
-Wipe the recent stored plugins' data
-Wipe the recent Service Worker fingerprints
