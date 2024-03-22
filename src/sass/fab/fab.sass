@@ -1,0 +1,87 @@
+.snackbar
+	position: fixed
+	top: -100%
+	left: 50%
+	transform: translateX(-50%)
+	padding: 0 !important
+	margin: 0 !important
+	border-radius: 10px
+	width: 400px !important
+	font-size: 16px !important
+	transition: all .5s
+	z-index: 9999999 !important
+
+@media (max-width: 424px)
+	.snackbar
+		width: calc(100% - 20px)!important
+
+.snackbar div
+	background: #0074D8 !important
+	color: #fafafa !important
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important
+	padding: 20px 30px !important
+	margin: 0!important
+	text-align: center
+	width: auto !important
+
+.fab_btn
+	background: var(--ftlcl0)
+
+.fab_wrap
+	position: absolute
+	padding: 0 !important
+	margin: 0 !important
+	z-index: 999999 !important
+	background: transparent !important
+	box-shadow: none !important
+	*
+		border-radius: 0
+		box-shadow: none !important
+		padding: 0
+		margin: 0
+		background: unset
+		color: unset
+
+.fab_cnt
+	box-sizing: border-box
+
+.fab_btn
+	position: fixed
+	z-index: 1010
+	height: 50px
+	width: 50px
+	padding: 0 !important
+	bottom: var(--fab-y)
+	left: var(--fab-x)
+	background-color: var(--ftlcl0) !important
+	color: var(--ftlcl1) !important
+	border-radius: 50%
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15)
+	user-select: none
+	display: flex
+	justify-content: center
+	align-items: center
+	pointer-events: auto
+	& svg
+		fill: currentColor
+		height: 26px
+.fab_wrap.open
+	pointer-events: unset !important
+	& .fab_cnt
+		opacity: 1 !important
+		visibility: visible !important
+.fab_cnt>[data-id="fs"].fullscreen svg:nth-child(2),
+.fab_cnt>[data-id="fs"] svg:nth-child(1)
+	display: inline
+
+.fab_cnt>[data-id="fs"].fullscreen svg:nth-child(1),
+.fab_cnt>[data-id="fs"] svg:nth-child(2)
+	display: none
+
+.fab_cnt>[data-id="bt"].bookmark svg:nth-child(2),
+.fab_cnt>[data-id="bt"] svg:nth-child(1)
+	display: inline
+
+.fab_cnt>[data-id="bt"].bookmark svg:nth-child(1),
+.fab_cnt>[data-id="bt"] svg:nth-child(2)
+	display: none

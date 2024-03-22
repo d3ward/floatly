@@ -1,0 +1,32 @@
+#fab_h_cnt
+	position: fixed
+	overflow: auto
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	overflow-x: auto
+	gap: 5px
+	bottom: calc(60px + var(--fab-y))
+	padding: 5px !important
+	left: 5px
+	width: calc(100vw - 10px)
+	min-height: 50px
+	opacity: 0
+	visibility: hidden
+	background-color: var(--ftlcl4) !important
+	border: solid 2px var(--ftlcl5)
+	border-radius: 50px
+	transition: all .3s ease-in-out
+
+	& div
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		width: 46px
+		flex: 0 0 auto
+		height: 46px
+		margin: 0 !important
+		padding: 0 !important
+		color: var(--ftlcl3)
+		background-color: var(--ftlcl2) !important
+		border-radius: 50%

@@ -1,0 +1,59 @@
+.fab_radial div>svg
+	height: 25px
+
+#fab_r
+	position: fixed
+	bottom: calc(-125px + var(--fab-y) )
+	left: calc(-125px + var(--fab-x) )
+	width: 300px
+	height: 300px
+	padding: 0 !important
+	margin: 0
+	pointer-events: none
+	z-index: 1000
+
+#fab_r_cnt
+	width: 300px
+	height: 300px
+	opacity: 0
+	visibility: hidden
+	border-radius: 50%
+	background-color: var(--ftlcl4) !important
+	border: solid 2px var(--ftlcl5) !important
+
+.open #fab_r_cnt
+	opacity: 1
+	visibility: visible !important
+	pointer-events: auto
+
+	& div
+		text-decoration: none
+		background-color: var(--ftlcl2) !important
+		color: var(--ftlcl3) !important
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50%
+		height: 46px
+		width: 46px
+		padding: 0 !important
+		margin-left: -23px
+		margin-top: -23px
+		position: absolute
+		text-align: center
+
+#fly_btn-r
+	bottom: calc(50% - 25px)
+	left: calc(50% - 25px)
+	position: absolute
+	z-index: 1000
+	height: 50px
+	width: 50px
+	background-color: var(--ftlcl0) !important
+	color: var(--ftlcl1) !important
+	border-radius: 50%
+	user-select: none
+	display: flex
+	justify-content: center
+	align-items: center
+	pointer-events: auto
