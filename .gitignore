@@ -1,1 +1,12 @@
+<<<<<<< Updated upstream
 node_modules/
+=======
+/node_modules
+dist
+/.vscode
+.DS_Store
+
+.env
+.env.local
+.env.development
+>>>>>>> Stashed changes

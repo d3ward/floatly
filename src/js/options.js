@@ -1,5 +1,22 @@
+<<<<<<< Updated upstream
 import Sortable from 'sortablejs';
 import Picker from 'vanilla-picker';
+=======
+import Sortable from 'sortablejs'
+import Picker from 'vanilla-picker'
+import actions from '../data/actions.json'
+import A11yDialog from 'a11y-dialog'
+import '../sass/options.sass'
+import { themeManager } from './components/themeManager'
+import { openFullscreen, closeFullscreen } from './components/fullscreen'
+import { getEventListeners, generateID } from './components/utilities'
+import { BottomSheet } from './components/bottomsheet'
+import { dragElement } from './components/dragElement'
+import { SwipeManager } from './components/swipeManager'
+import { aos } from './components/aos'
+import { rotate } from './components/rotate'
+import { ItemManager } from './components/blacklistManager'
+>>>>>>> Stashed changes
 
 import '../css/options.css'
 var actionsDiv = [
@@ -295,6 +312,7 @@ var fstyle;
 /*              Restore User Config             */
 /* ============================================ */
 function restore_options() {
+<<<<<<< Updated upstream
   chrome.storage.local.get({
     style:"fab",
     colors: ["#663fa6", "#ffffff", "#663fa6", "#ffffff", "#101010","#663fa6", "#ffffff"],
@@ -314,6 +332,12 @@ function restore_options() {
         document.getElementById("sa-"+j).innerHTML=actionsString;
         document.getElementById("sa-"+j).value=splist[j];
       }
+=======
+	chrome.storage.local.get(
+		{
+			style: 'fab',
+			colors: ['#0878A5', '#ffffff', '#0878A5', '#ffffff', '#101010', '#101010', '#ffffff', '#0878A5', '#ffffff'],
+>>>>>>> Stashed changes
 
       for (var i = 0; i < actionsDiv.length; i++){
         var n = parseInt(userActions[i]);
@@ -440,11 +464,50 @@ function f_cp_rgb(t) {
 //document.getElementById("pick_cancel").addEventListener("click", ()=>{cp_lrt.style.display = "none";})
 /* ============================================ */
 
+<<<<<<< Updated upstream
 const elements = document.querySelectorAll('.stt_clfrt');
 elements.forEach( (el,index) => {
   el.addEventListener("click",function(){f_cp_rgb(index)});
 });
 document.getElementById('save').addEventListener('click', save_options);
+=======
+document.addEventListener('DOMContentLoaded', () => {
+	restore_options()
+	new themeManager()
+	new aos()
+	const elements = document.querySelectorAll('.stt_clfrt')
+	elements.forEach((el, index) => {
+		el.addEventListener('click', function () {
+			f_cp_rgb(index)
+		})
+	})
+	document.getElementById('save').addEventListener('click', save_options)
+	//Exit from custom fab position mode
+	document.getElementById('mm_exit').addEventListener('click', () => {
+		document.getElementById('mm_bg').classList.remove('show')
+		document.getElementById('mm_move').style.display = 'none'
+		closeFullscreen()
+	})
+	//Reset custom fab postion to default
+	document.getElementById('mm_reset').addEventListener('click', () => {
+		document.body.style.setProperty('--fab-y', '20px')
+		document.body.style.setProperty('--fab-x', '20px')
+	})
+	//Enable custom fab position mode
+	document.querySelector('#mm_btn').addEventListener('click', () => {
+		document.getElementById('mm_bg').classList.add('show')
+		document.getElementById('mm_move').style.display = 'flex'
+	})
+	document.getElementById('tb2-1').onchange = () => {
+		setup_preview('fab', document.getElementById('fab_style').value)
+	}
+	document.getElementById('tb2-2').onchange = () => {
+		setup_preview('bab')
+	}
+	document.getElementById('fab_style').onchange = () => {
+		setup_preview('fab', document.getElementById('fab_style').value)
+	}
+>>>>>>> Stashed changes
 
 document.addEventListener("DOMContentLoaded", ()=>
 	{

@@ -1,0 +1,283 @@
+@charset "utf-8"
+
+@import "./settings/variables"
+
+@import "./theme/light"
+@import "./theme/dark"
+
+html
+	--rv: 6
+	--fab-y: 20px
+	--fab-x: 20px
+
+@import "./base/basic"
+
+@import "./layout/navbar"
+@import "./layout/grid"
+@import "./layout/container"
+
+@import "./elements/button"
+@import "./elements/form"
+@import "./elements/typography"
+
+@import "./components/tabs"
+@import "./components/card"
+@import "./components/modal"
+@import "./components/bottomsheet"
+@import "./extra/aos"
+@import "./utilities/alignment"
+@import "./utilities/background"
+@import "./utilities/margin"
+@import "./utilities/position"
+@import "./utilities/display"
+@import "./utilities/general"
+@import "./picker"
+.tabs>label
+	width: calc(50% - 0.5rem )
+	text-align: center
+
+body
+	--ftlcl0: #0878A5
+	--ftlcl1: #fff
+	--ftlcl2: #0878A5
+	--ftlcl3: #fff
+	--ftlcl4: #fff
+	--ftlcl5: #101010
+	--ftlcl6: #101010
+	--ftlcl7: #0878A5
+	--ftlcl8: #fff
+
+.bab
+	display: flex
+	width: 100%
+	margin: auto
+	height: 50px
+	align-items: center
+	justify-content: space-evenly
+	border-radius: 0
+	background: var(--ftlcl7)
+	position: fixed
+	bottom: 0
+	left: 0
+	z-index: 999
+	&>div
+		position: relative
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		width: 46px
+		flex: 0 0 auto
+		height: 46px
+		padding: 0 !important
+		text-decoration: none
+		color: var(--ftlcl8)
+
+#av
+	border: 2px solid var(--ftlcl2)
+	display: flex
+	flex-wrap: wrap
+	justify-content: left
+	min-height: 50px
+
+#av div,
+#uv div,
+.fly_btn
+	color: var(--ftlcl3)
+	height: 46px
+	width: 46px
+	display: flex
+	justify-content: center
+	align-items: center
+
+#av div>svg,
+#uv div>svg
+	height: 25px
+
+#sv option,
+#sv
+	color: var(--ftlcl2)
+	font-weight: 700
+
+.av_ghost
+	background-color: var(--ftlcl2) !important
+	filter: invert(100%)
+
+::-webkit-scrollbar
+	width: 12px
+
+::-webkit-scrollbar-track
+	background-color: #ddd
+
+#uv,
+#av,
+.sw,
+#uv::-webkit-scrollbar-track,
+#uv::-webkit-scrollbar-thumb,
+.sw::-webkit-scrollbar-track,
+.sw::-webkit-scrollbar-thumb
+	border-radius: var(--radius)
+
+#uv::-webkit-scrollbar
+	height: 20px !important
+
+#uv
+	border: 2px solid var(--ftlcl2)
+	padding-bottom: 25px
+	display: flex
+	min-height: 70px
+	gap: .5rem
+	flex-wrap: wrap
+	padding: .5rem
+
+#uv div,
+.fly_btn
+	border-radius: 50%
+
+#pth1
+	fill: var(--ftlcl1)
+
+.sw-wrapper
+	position: relative
+
+.sw
+	border: 2px var(--ftlcl2) solid
+	height: 200px
+	overflow-x: hidden
+	overflow-y: scroll
+	padding: 10px
+	display: flex
+	flex-direction: column
+	gap: 10px
+
+	&>div
+		display: flex
+		align-items: center
+
+.user-list
+	width: 100%
+
+#tbtb>tr>div
+	border: 2px solid var(--ftlcl2)
+	padding: .5rem
+	border-radius: var(--radius)
+
+#tbtb label
+	display: inline-block
+	margin-left: 10px
+
+.stt_clfrt
+	background: transparent
+	border: 2px solid #000
+	border-radius: var(--radius)
+	display: inline-block
+	height: 30px
+	position: relative
+	width: 30px
+
+#stt_cl0
+	background: var(--ftlcl0)
+
+#stt_cl1,
+#lrt_fl .lrt_cnt
+	background: var(--ftlcl1)
+
+#stt_cl3
+	background: var(--ftlcl3)
+
+#stt_cl4
+	background: var(--ftlcl4)
+
+#stt_cl5
+	background: var(--ftlcl5)
+
+#stt_cl6
+	background: var(--ftlcl6)
+#stt_cl7
+	background: var(--ftlcl7)
+#stt_cl8
+	background: var(--ftlcl8)
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:hover,
+#stt_cl2,
+#uv div,
+#av div,
+#av
+	background: var(--ftlcl2)
+
+#pth1
+	fill: '+c[1]+' !important
+
+
+::-webkit-scrollbar
+	display: none
+
+.f-preview
+	display: none
+	&.show
+		display: block
+@import ./fab/fab
+@import ./fab/fab_h
+@import ./fab/fab_r
+@import ./fab/fab_s
+
+#mm_bg
+	visibility: hidden
+	opacity: 0
+	position: fixed
+	top: 0
+	left: 0
+	height: 100vh
+	width: 100vw
+	z-index: 9999999
+	backdrop-filter: blur(4px)
+	display: none
+	align-items: center
+	justify-content: center
+	background: rgba(0, 0, 0, 0.63)
+	transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+	&.show
+		display: flex
+		visibility: visible
+		opacity: 1
+
+#mm_move
+	bottom: calc(50% - 25px)
+	left: calc(50% - 25px)
+	position: absolute
+	z-index: 1000
+	height: 50px
+	width: 50px
+	background-color: var(--ftlcl0) !important
+	color: var(--ftlcl1) !important
+	border-radius: 50%
+	box-shadow: 0 5px 20px rgb(0 0 0 / 15%)
+	user-select: none
+	display: flex
+	justify-content: center
+	align-items: center
+	pointer-events: auto
+
+#mm_move
+	display: none
+	bottom: var(--fab-y)
+	left: var(--fab-x)
+	z-index: 1000001
+	&>svg
+		height: 30px
+
+.chk
+	width: 100%
+
+.layout_default.picker_wrapper
+	width: auto
+	background: transparent
+	box-shadow: none
+	gap: 10px
+	&>*
+		margin: 1em
+		border-radius: 5px
+
+.layout_default .picker_editor
+	width: auto

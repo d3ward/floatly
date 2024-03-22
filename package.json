@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "name": "floatly",
   "version": "2.2.0",
   "description": "Floatly is an awesome floating button that brings quick actions to any website.",
@@ -35,4 +36,71 @@
     "sortablejs": "^1.15.0",
     "vanilla-picker": "^2.12.1"
   }
+=======
+	"name": "floatly",
+	"version": "3.0.0",
+	"description": "Floatly is an awesome floating button that brings quick browser actions from any website.",
+	"scripts": {
+		"purge": "node config/purgecss.js",
+		"dev-website": "webpack serve --config config/webpack.dev.website.js",
+		"dev": "yarn build-fab && cross-env TYPE=chrome MV=2 webpack --config config/webpack.dev.js",
+		"dev:mv3": "yarn build-fab && cross-env TYPE=chrome MV=3 webpack --config config/webpack.dev.js",
+		"dev:firefox": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.dev.js",
+		"build-website": "cross-env webpack --config config/webpack.prod.website.js",
+		"build-fab" :"node-sass src/sass/fab -o src/css/fab --output-style compressed",
+		"build": "cross-env TYPE=chrome MV=2 webpack --config config/webpack.prod.js",
+		"build:v3": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.prod.js",
+		"build:firefox": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.prod.js",
+		"build:firefox:v3": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.prod.js",
+		"lint": "eslint  'src/**/*.{js,ts}' && echo 'Linting complete!'",
+    	"lint-fix": "eslint  'src/**/*.{js,ts}' --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/d3ward/floalty.git"
+	},
+	"author": "Eduard Ursu",
+	"license": "(CC BY-NC-SA 4.0)",
+	"bugs": {
+		"url": "https://github.com/d3ward/floatly/issues"
+	},
+	"homepage": "https://github.com/d3ward/floatly#readme",
+	"devDependencies": {
+		"@babel/core": "^7.21.3",
+		"@babel/plugin-transform-runtime": "^7.21.0",
+		"@babel/preset-env": "^7.20.2",
+		"@parcel/config-webextension": "^2.8.3",
+		"@typescript-eslint/eslint-plugin": "^5.55.0",
+		"@typescript-eslint/parser": "^5.55.0",
+		"autoprefixer": "^10.4.14",
+		"babel-loader": "^9.1.2",
+		"clean-webpack-plugin": "^4.0.0",
+		"copy-webpack-plugin": "^11.0.0",
+		"cross-env": "^7.0.3",
+		"css-loader": "^6.7.3",
+		"eslint": "^8.36.0",
+		"eslint-config-prettier": "^8.7.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.5.0",
+		"mini-css-extract-plugin": "^2.7.3",
+		"node-sass": "^8.0.0",
+		"postcss-loader": "^7.0.2",
+		"prettier": "^2.8.4",
+		"sass": "^1.57.1",
+		"sass-loader": "^13.2.0",
+		"style-loader": "^3.3.2",
+		"terser-webpack-plugin": "^5.3.7",
+		"typescript": "^5.0.2",
+		"webpack": "^5.76.1",
+		"webpack-cli": "^5.0.1",
+		"webpack-dev-server": "^4.12.0"
+	},
+	"dependencies": {
+		"a11y-dialog": "^7.5.2",
+		"purgecss": "^5.0.0",
+		"sortablejs": "^1.15.0",
+		"vanilla-picker": "^2.12.1"
+	}
+>>>>>>> Stashed changes
 }
