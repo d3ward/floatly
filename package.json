@@ -5,8 +5,8 @@
 	"scripts": {
 		"purge": "node config/purgecss.js",
 		"dev-website": "webpack serve --config config/webpack.dev.website.js",
-		"dev": "yarn build-fab && cross-env TYPE=chrome MV=2 webpack --config config/webpack.dev.js",
-		"dev:mv3": "yarn build-fab && cross-env TYPE=chrome MV=3 webpack --config config/webpack.dev.js",
+		"dev": "npm run build-fab && cross-env TYPE=chrome MV=2 webpack --config config/webpack.dev.js",
+		"dev:mv3": "npm run build-fab && cross-env TYPE=chrome MV=3 webpack --config config/webpack.dev.js",
 		"dev:firefox": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.dev.js",
 		"build-website": "cross-env webpack --config config/webpack.prod.website.js",
 		"build-fab" :"node-sass src/sass/fab -o src/css/fab --output-style compressed",
