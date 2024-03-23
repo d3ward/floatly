@@ -49,26 +49,26 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: 'asset/resource',
+				type: 'asset/resource'
 			},
 			{
 				test: /\.ejs$/i,
-				use: ['html-loader', 'template-ejs-loader'],
+				use: ['html-loader', 'template-ejs-loader']
 			},
 
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: 'babel-loader',
+				use: 'babel-loader'
 			},
 			{
 				test: /\.(sa|sc|c)ss$/,
 				use: [
 					MiniCssExtractPlugin.loader, // extract css from commonjs
 					'css-loader', // turn css into commonjs
-					'sass-loader', // turn scss into css
-				],
-			},
-		],
-	},
+					'sass-loader' // turn scss into css
+				]
+			}
+		]
+	}
 }

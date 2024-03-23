@@ -1,9 +1,6 @@
 /* -------------- Spacer Utility -------------- */
-$values: ("0": 0,"1": 1rem, "2": 2rem, "3": 3rem)
+$values: ("0": 0,"1": 1rem, "2": 2rem, "3": 3rem, "4": 4rem)
 
 @each $name, $value in $values
-	[class*="-#{$name}p"]
-		--spacer-p: #{$value}!important
-@each $name, $value in $values
-	[class*="-#{$name}m"]
-		--spacer-m: #{$value}!important
+    [class*="-#{$name}"]
+        --spacer: #{$value}!important

@@ -5,21 +5,24 @@ export function gotop() {
 		window.scroll({
 			top: 0,
 			left: 0,
-			behavior: 'smooth',
+			behavior: 'smooth'
 		})
 	}
 	el.listeners = function () {
 		window.addEventListener('scroll', () => {
 			let y = window.scrollY
 			if (y > 0) {
-				el.gt.classList.remove('hide')
+				el.gt.classList.remove('hidden')
 			} else {
-				el.gt.classList.add('hide')
+				el.gt.classList.add('hidden')
 			}
 		})
 		el.gt.onclick = function (e) {
 			e.preventDefault()
-			if (document.documentElement.scrollTop || document.body.scrollTop > 0) {
+			if (
+				document.documentElement.scrollTop ||
+				document.body.scrollTop > 0
+			) {
 				el.scrollToTop()
 			}
 		}

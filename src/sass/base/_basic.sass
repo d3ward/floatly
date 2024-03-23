@@ -1,25 +1,8 @@
 /* ---------------- Basic resets and improvements --------------- */
-/* Eric Meyer's CSS Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td
-	margin: 0
-	padding: 0
-	border: 0
-	font-size: 100%
-	font: inherit
-	vertical-align: baseline
-
-*, *:before, *:after
+*,
+*::before,
+*::after
 	box-sizing: border-box
-/* -------------------*/
-
 *:focus:not(:focus-visible)
 	outline: 0
 *:focus-visible
@@ -28,7 +11,7 @@ table, caption, tbody, tfoot, thead, tr, th, td
 html
 	text-rendering: optimizeLegibility
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif
-	font-size: 16px
+	font-size: 12pt
 	color: var(--txt)
 	background: var(--bg)
 body
@@ -38,7 +21,7 @@ body
 	gap: .5rem
 	align-items: center
 	justify-content: center
-
+	
 	@media (prefers-reduced-motion: no-preference)
 		scroll-behavior: smooth
 body,html
@@ -72,11 +55,8 @@ section
 	display: flex
 	flex-direction: column
 
-.better_r
-	-webkit-font-smoothing: antialiased!important
-	-moz-font-smoothing: antialiased!important
-	font-size: 16px
-	letter-spacing: .7px
-	line-height: 1.5
-	text-align: justify
-	text-rendering: optimizelegibility!important
+._mh-100-5
+	min-height: calc(100vh - 15em + 3rem)
+
+.no-js
+	display: none

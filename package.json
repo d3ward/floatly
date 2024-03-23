@@ -9,13 +9,13 @@
 		"dev:mv3": "npm run build-fab && cross-env TYPE=chrome MV=3 webpack --config config/webpack.dev.js",
 		"dev:firefox": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.dev.js",
 		"build-website": "cross-env webpack --config config/webpack.prod.website.js",
-		"build-fab" :"node-sass src/sass/fab -o src/css/fab --output-style compressed",
+		"build-fab": "node-sass src/sass/fab -o src/css/fab --output-style compressed",
 		"build": "cross-env TYPE=chrome MV=2 webpack --config config/webpack.prod.js",
 		"build:v3": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.prod.js",
 		"build:firefox": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.prod.js",
 		"build:firefox:v3": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.prod.js",
 		"lint": "eslint  'src/**/*.{js,ts}' && echo 'Linting complete!'",
-    	"lint-fix": "eslint  'src/**/*.{js,ts}' --fix"
+		"lint-fix": "eslint  'src/**/*.{js,ts}' --fix"
 	},
 	"repository": {
 		"type": "git",
@@ -54,8 +54,10 @@
 	},
 	"dependencies": {
 		"a11y-dialog": "^8.0.4",
+		"html-loader": "^5.0.0",
 		"purgecss": "^5.0.0",
 		"sortablejs": "^1.15.2",
+		"template-ejs-loader": "^0.9.4",
 		"vanilla-picker": "^2.12.2"
 	}
 }

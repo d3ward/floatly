@@ -3,13 +3,18 @@ header
 	width: 100%
 	z-index: 2
 	top: 0
-
+.navbar-wrap
+	padding: .5rem .5rem .5rem .5rem
+	margin: auto
+header.scrolled .navbar-wrap
+	background: var(--bg-nav)
+	
 nav
 	display: flex
 	justify-content: space-between
 	align-items: center
 	background: var(--bg-nav)
-	border-bottom: 1px solid var(--brd)
+	border-radius: calc( var(--radius) + .2rem)
 	padding: .4rem
 	width: 100%
 	margin: auto
@@ -61,7 +66,42 @@ nav
 			padding: .4rem
 			border-radius: var(--radius)
 			color: var(--txt)
+			cursor: pointer
 			&:hover,&.active
 				background: var(--bg-nav-h)
 			&.active
 				color: var(--primary)
+
+@media only screen and ( max-width: 768px )
+	nav
+		&>ul
+			position: fixed
+			top: 5rem
+			padding: .5rem
+			right: -100%
+			flex-direction: column
+			background: var(--bg-nav)
+			width: calc(100% - 1rem)
+			border-radius: 10px
+			text-align: center
+			transition: .3s
+			box-shadow: var(--shadow)
+		&>button
+			display: flex
+			cursor: pointer
+		&.active
+			&>.nav-overlay
+				display: flex
+			>ul
+				right: .5rem
+				
+			>button svg line:nth-child(1)
+				opacity: 0
+				transform: translateY(-100%)
+			>button svg line:nth-child(4)
+				opacity: 0
+				transform: translateY(100%)
+			>button svg line:nth-child(2)
+				transform: rotate(45deg)
+			>button svg line:nth-child(3)
+				transform: rotate(-45deg)
