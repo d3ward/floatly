@@ -1,0 +1,59 @@
+name: Build Floatly Extension
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-extension:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set version from package.json to manifest.json
+        run: |
+          manifest_path="src/manifest.json"
+          package_json_path="package.json"
+          version=$(jq -r '.version' "$package_json_path")
+          echo "Extracted version: $version"
+          jq --arg v "$version" '.version = $v' "$manifest_path" > tmp.$$.json && mv tmp.$$.json "$manifest_path"
+          echo "VERSION=$version" >> $GITHUB_ENV
+
+      - name: Build Floatly as extension
+        run: npm run ext
+
+      - name: Generate PEM file
+        run: echo "${{ secrets.FLOATLY_PEM }}" > floatly.pem
+
+      - name: Install CRX CLI
+        run: npm install -g crx
+
+      - name: Build the CRX version of Floatly
+        run: crx pack ./dist-ext -o ./floatly_${{ env.VERSION }}.crx -p floatly.pem
+
+      - name: Update manifest with public key
+        run: >
+          sed -i "2 i \"key\": \"$(2>/dev/null openssl rsa -in floatly.pem -pubout -outform DER | openssl base64 -A)\"," dist-ext/manifest.json
+
+      - name: Build the ZIP version of Floatly
+        run: cd dist-ext && zip -r ../floatly_${{ env.VERSION }}.zip ./*
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-files
+          path: |
+            ./floatly_${{ env.VERSION }}.crx
+            ./floatly_${{ env.VERSION }}.zip
+
+      - uses: ncipollo/release-action@v1
+        with:
+          draft: true
+          name: "Floatly v${{ env.VERSION }}"
+          tag: v${{ env.VERSION }}
+          artifacts: "floatly_${{ env.VERSION }}.crx,floatly_${{ env.VERSION }}.zip"
+          bodyFile: "CHANGELOG.md"

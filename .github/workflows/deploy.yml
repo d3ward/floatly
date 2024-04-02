@@ -1,0 +1,38 @@
+name: Deploy to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  gh-pages-deploy:
+    name: Deploying to gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Clean install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Files stats /dist
+        run: |
+          echo "Total file count in /dist:"
+          find ./dist -type f | wc -l
+          echo "Total size of files in /dist:"
+          du -sh ./dist
+          echo "Individual file sizes in /dist:"
+          find ./dist -type f -exec du -h {} +
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
