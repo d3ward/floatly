@@ -1,8 +1,8 @@
 const { merge } = require('webpack-merge')
-const common = require('./webpack.common')
+const ext = require('./webpack.ext')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-module.exports = merge(common, {
+module.exports = merge(ext, {
 	mode: 'development',
 	devtool: 'cheap-module-source-map',
 	optimization: {

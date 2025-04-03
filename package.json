@@ -4,16 +4,17 @@
 	"description": "Floatly is an awesome floating button that brings quick browser actions from any website.",
 	"scripts": {
 		"purge": "node config/purgecss.js",
-		"dev-website": "webpack serve --config config/webpack.dev.website.js",
-		"dev": "npm run build-fab && cross-env TYPE=chrome MV=2 webpack --config config/webpack.dev.js",
-		"dev:mv3": "npm run build-fab && cross-env TYPE=chrome MV=3 webpack --config config/webpack.dev.js",
-		"dev:firefox": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.dev.js",
-		"build-website": "cross-env webpack --config config/webpack.prod.website.js",
+		"purge-ext": "node config/purgecss-ext.js",
+		"dev": "webpack serve --config config/webpack.dev.js",
+		"dev-ext": "npm run build-fab && cross-env TYPE=chrome MV=2 webpack --config config/webpack.ext.dev.js",
+		"dev-ext3": "npm run build-fab && cross-env TYPE=chrome MV=3 webpack --config config/webpack.ext.dev.js",
+		"dev-firefox": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.dev.js",
+		"build": "webpack --config config/webpack.prod.js",
 		"build-fab": "node-sass src/sass/fab -o src/css/fab --output-style compressed",
-		"build": "cross-env TYPE=chrome MV=2 webpack --config config/webpack.prod.js",
-		"build:v3": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.prod.js",
-		"build:firefox": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.prod.js",
-		"build:firefox:v3": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.prod.js",
+		"build-ext": "cross-env TYPE=chrome MV=2 webpack --config config/webpack.ext.prod.js",
+		"build-ext3": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.ext.prod.js",
+		"build-ext-firefox": "cross-env TYPE=chrome MV=3 webpack --config config/webpack.ext.prod.js",
+		"build-ext-firefox3": "cross-env TYPE=firefox MV=3 webpack --config config/webpack.ext.prod.js",
 		"lint": "eslint  'src/**/*.{js,ts}' && echo 'Linting complete!'",
 		"lint-fix": "eslint  'src/**/*.{js,ts}' --fix"
 	},
@@ -26,7 +27,7 @@
 	"bugs": {
 		"url": "https://github.com/d3ward/floatly/issues"
 	},
-	"homepage": "https://github.com/d3ward/floatly#readme",
+	"homepage": "https://d3ward.github.io/floatly",
 	"devDependencies": {
 		"@babel/core": "^7.24.3",
 		"@babel/plugin-transform-runtime": "^7.24.3",
@@ -41,6 +42,9 @@
 		"file-loader": "^6.2.0",
 		"html-webpack-plugin": "^5.6.0",
 		"mini-css-extract-plugin": "^2.8.1",
+		"template-ejs-loader": "^0.9.4",
+		"html-loader": "^5.0.0",
+		"purgecss": "^5.0.0",
 		"node-sass": "^9.0.0",
 		"postcss-loader": "^8.1.1",
 		"prettier": "^3.2.5",
@@ -54,10 +58,7 @@
 	},
 	"dependencies": {
 		"a11y-dialog": "^8.0.4",
-		"html-loader": "^5.0.0",
-		"purgecss": "^5.0.0",
 		"sortablejs": "^1.15.2",
-		"template-ejs-loader": "^0.9.4",
 		"vanilla-picker": "^2.12.2"
 	}
 }

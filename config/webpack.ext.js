@@ -2,7 +2,9 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 const { src, extBuild, extJS, extV3JS, extPages, type, mv } = require('./config')
+const packageJson = require('../package.json')
 
 var ext_entries, manifest_file
 if (mv == 2) {
@@ -50,13 +52,16 @@ module.exports = {
 		...extPages.map(
 			(page) =>
 				new HTMLWebpackPlugin({
-					template: path.join('html', `${page}.html`),
+					template: `./${page}.ejs`,
 					filename: `${page}.html`,
 					chunks: [page],
 					minify: false,
 					sources: false,
 				}),
 		),
+		new webpack.DefinePlugin({
+            __VERSION__: JSON.stringify(packageJson.version)
+        })
 	],
 	module: {
 		rules: [
@@ -71,6 +76,10 @@ module.exports = {
 					},
 				},
 			},
+			{
+                test: /\.ejs$/i,
+                use: ['html-loader', 'template-ejs-loader']
+            },
 			{
 				test: /\.(sa|sc)ss$/,
 				use: [

@@ -1,4 +1,4 @@
-const main = require('./webpack.website')
+const main = require('./webpack.common')
 const { merge } = require('webpack-merge')
 const { build } = require('./config')
 

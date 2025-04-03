@@ -8,7 +8,7 @@
     "scripts": ["js/background.js"],
     "persistent": false
   },
-  "options_page": "html/options.html",
+  "options_page": "./options.html",
 
   "content_scripts": [{
     "matches": [
@@ -17,11 +17,11 @@
     "js": ["js/content.js"]
   }],
   "browser_action": {
-    "default_icon": "png/icon256.png"
+    "default_icon": "assets/png/icon256.png"
   },
   "icons": { 
-    "20": "png/icon20.png",
-    "48": "png/icon48.png",
-    "152": "png/icon152.png" 
+    "20": "assets/png/icon20.png",
+    "48": "assets/png/icon48.png",
+    "152": "assets/png/icon152.png" 
   }
 }

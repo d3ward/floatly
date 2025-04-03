@@ -17,10 +17,12 @@ jobs:
       - name: Set version from package.json to manifest.json
         run: |
           manifest_path="src/manifest.json"
+          manifest3_path="src/manifest_v3.json"
           package_json_path="package.json"
           version=$(jq -r '.version' "$package_json_path")
           echo "Extracted version: $version"
           jq --arg v "$version" '.version = $v' "$manifest_path" > tmp.$$.json && mv tmp.$$.json "$manifest_path"
+          jq --arg v "$version" '.version = $v' "$manifest3_path" > tmp.$$.json && mv tmp.$$.json "$manifest3_path"
           echo "VERSION=$version" >> $GITHUB_ENV
 
       - name: Build Floatly as extension

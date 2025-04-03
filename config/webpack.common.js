@@ -34,10 +34,6 @@ module.exports = {
                         ]
                     },
                     noErrorOnMissing: true
-                },
-                {
-                    from: './themes',
-                    to: 'themes'
                 }
             ]
         }),
