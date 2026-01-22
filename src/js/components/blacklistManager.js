@@ -11,7 +11,16 @@ export class ItemManager {
 		if (val.length > 2) {
 			const div = document.createElement('div')
 			const id = this.generateID()
-			div.innerHTML = `<input type="checkbox" name="tbch" id="${id}"><label class="chk" for="${id}">${val}</label>`
+			const checkbox = document.createElement('input')
+			checkbox.type = 'checkbox'
+			checkbox.name = 'tbch'
+			checkbox.id = id
+			const label = document.createElement('label')
+			label.className = 'chk'
+			label.setAttribute('for', id)
+			label.textContent = val
+			div.appendChild(checkbox)
+			div.appendChild(label)
 			document.getElementById(this.containerId).prepend(div)
 		}
 	}
