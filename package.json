@@ -48,8 +48,8 @@
 		"style-loader": "^4.0.0",
 		"terser-webpack-plugin": "^5.4.0",
 		"webpack": "^5.105.4",
-		"webpack-cli": "^7.0.2",
-		"webpack-dev-server": "^5.2.6"
+		"webpack-cli": "^7.2.2",
+		"webpack-dev-server": "^6.0.0"
 	},
 	"dependencies": {
 		"a11y-dialog": "^8.1.5",
